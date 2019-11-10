@@ -6,6 +6,7 @@ CREATE TABLE user(
 	age INTEGER,
 	date_of_birth DATE,
 	about VARCHAR,
+	photo VARCHAR,
 );
 
 
@@ -24,12 +25,32 @@ CREATE TABLE house(
 	casas_de_banho INTEGER
 );
 
+CREATE TABLE photo(
+	id_house INTEGER REFERENCES house,
+	photo VARCHAR,
+	photo_id INTEGER PRIMARY KEY 
+);
+
+
+/* Ter o id_house e o id_user como primary keys 
+não iria causar problemas para casas com mais que um periodo de
+availabilty
+ 
+CREATE TABLE availability(
+	id_user VARCHAR REFERENCES user,
+	id_house INTEGER REFERENCES house,
+	start_date
+);
+*/
 
 CREATE TABLE reservation(
 	id_reservation INTEGER PRIMARY KEY,
 	id_user VARCHAR REFERENCES user,
 	id_house INTEGER REFERENCES house,
-	n_hospedes INTEGER
+	n_hospedes INTEGER,
+	payment INTEGER,
+	start_date DATE,
+	end_date DATE,
 );
 
 CREATE TABLE date_reservation(
@@ -41,9 +62,9 @@ CREATE TABLE date_reservation(
 );
 
 CREATE TABLE review(
-	id_comment INTEGER PRIMARY KEY,
+	id_review INTEGER PRIMARY KEY,
 	rating INTEGER,
-	comment VARCHAR,
+	review_c VARCHAR,
 	id_house INTEGER REFERENCES house,
 	id_user VARCHAR REFERENCES user
 );
@@ -56,18 +77,3 @@ CREATE TABLE message(
 );
 
 
---User Inserts
-
-INSERT INTO user VALUES ("pedrag","yeet");
-
---User Inserts
-
-INSERT INTO user_info VALUES ("Pedro",21,'10/03/1998',"Muito fixe","pedrag");
-
---House inserts
-
-INSERT INTO house VALUES (1,"pedrag",600,"Porto","Uma casa a cair de podre",3,3);
-INSERT INTO house VALUES (2,"pedrag",300,"Braga","Uma casa a cair de podre V2",3,3);
-INSERT INTO house VALUES (3,"pedrag",1600,"Lisboa","Uma casa demasiado cara",3,3);
-INSERT INTO house VALUES (4,"pedrag",400,"Penafiel","Uma casa a cair de podre V3",3,3);
-INSERT INTO house VALUES (5,"pedrag",800,"Porto","Idem aspas",3,3);
