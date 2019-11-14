@@ -5,11 +5,10 @@
 <html lang="en-US">
     <head>
         <title>Egg Recipes</title>
-            <meta charset="UTF-8">
-            <link rel="stylesheet" href="css/style.css">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="layout" href="css/layout.css">
     </head>
     <body>
-        <header>
-              <h1><a href="list_recipes.php">Egg Recipes</a></h1>
-        </header>
+       
 <?php }?>
