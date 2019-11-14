@@ -54,7 +54,7 @@ CREATE TABLE availability(
 		n_hospedes INTEGER,
 		payment INTEGER,
 		start_date DATE,
-		end_date DATE,
+		end_date DATE
 	);
 
 	CREATE TABLE date_reservation
