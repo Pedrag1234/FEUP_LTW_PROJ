@@ -83,7 +83,4 @@ CREATE TABLE availability(
 		id_receiver VARCHAR REFERENCES user
 	);
 
-INSERT INTO user VALUES ("Big chungus","Yeet","aslkdfnaskod",1000,"1900-10-10","Stop","YEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEET");
 
-INSERT INTO house VALUES (1,"Big chungus",100000,"Portugal","Big House",10,3,"A cair de podre",1,10,0);
-INSERT INTO house VALUES (2,"Big chungus",1,"Portugal","Small House",1,4,"E no esgoto",1100,10,100);

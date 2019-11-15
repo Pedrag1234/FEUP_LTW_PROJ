@@ -1,5 +1,5 @@
-<?
-	include_once('Database/connection.php');
+<?php
+	include_once('connection.php');
 
 	function getAllHouses(){
 		global $dbh;
@@ -16,5 +16,14 @@
 		$stmt->execute();
 		return $stmt->fetch();
 	}
+	
+	function getTopHouses(){
+		global $dbh;
+
+		$stmt = $dbh->prepare('SELECT * FROM house ORDER BY classificacao WHERE id_house = ? LIMIT 2');
+		$stmt->execute();
+		return $stmt->fetchAll();
+	}
+
 
 ?>
