@@ -5,9 +5,9 @@ include('Template/common/footer.php');
 include('Template/common/site_header_tpl.php');
 
 
-draw_header();
+draw_header_index();
 
-draw_site_header();
 
-draw_footer();?>
+draw_footer();
+?>
 

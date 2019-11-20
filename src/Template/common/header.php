@@ -34,10 +34,10 @@
                     </div>
                 </div>	
             </header>
-<?php }
+<?php }?>
 
 
-function draw_header_user(){?>
+<?php function draw_header_user(){ ?>
 
     $username = $_POST['username'];
 
