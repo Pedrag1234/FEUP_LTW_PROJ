@@ -13,6 +13,4 @@ function draw_login(){
     <?php
 }
 
-draw_login();
-
 ?>

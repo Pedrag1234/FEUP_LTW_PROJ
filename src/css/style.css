@@ -1,0 +1,34 @@
+body{
+	margin:0em;
+}
+
+#searchDiv{
+	font-family: sans-serif;
+	background-image: url("beach.jpg");
+	color: rgb(100, 255, 100);
+	text-shadow: 1px 1px black;
+	margin: 0em;
+	padding: 0.5em;
+	padding-top: 0.1em;
+	/*position: absolute;*/
+}
+
+#topNavBar {
+	display:grid;
+	font-family: sans-serif;
+	background-color: white;
+	color: blue;
+	text-decoration: none;
+	margin:0em;
+}
+#topNavBar > h1 {
+	color: rgb(20, 190, 255);
+	text-shadow: 1px 1px black;
+	background-color: white;
+}
+
+#house * {
+	margin: 1em;
+	color: white;
+	background-color: blue;
+}
