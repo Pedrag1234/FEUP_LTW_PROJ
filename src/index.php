@@ -8,6 +8,7 @@ include('Template/tpl_home.php');
 draw_header_index();
 
 displayTopHouses();
+
 draw_footer();
 ?>
 
