@@ -1,6 +1,6 @@
 <?php
 
-include_once('../Database/Queries/house_queries.php');
+include_once('Database/Queries/house_queries.php');
 
 function displayHouse($House){
 
@@ -16,10 +16,7 @@ function displayHouse($House){
 
 function displayTopHouses(){
     
-    /*$topHouses = array(
-        0 => array('title' => 'House', 'description'=>'beautiful house', 'location' => 'Portugal')
-    );*/
-    $topHouses = getTopHouses();
+    $topHouses = getAllHouses();
     foreach($topHouses as $house)
         displayHouse($house);
 
