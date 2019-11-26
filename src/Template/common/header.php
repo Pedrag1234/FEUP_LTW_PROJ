@@ -1,5 +1,5 @@
 
-<?php function draw_header_index(){?>
+<?php function draw_head(){?>
     <!DOCTYPE html>
     <html>
         <head>
@@ -9,6 +9,12 @@
             <link href="css/style.css" rel="stylesheet">
             <link href="css/layout.css" rel="stylesheet">
         </head>
+        
+<?php }?>
+
+
+<?php function draw_header_index(){?>
+        <?php draw_head() ?>
         <body>	
             <header id="searchHeader">
                 <div id="topNavBar">
@@ -43,21 +49,13 @@
 
     $username = $_POST['username'];
 
-    <!DOCTYPE html>
-    <html>
-        <head>
-            <title>Legit Renting</title>    
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link href="css/style.css" rel="stylesheet">
-            <link href="css/layout.css" rel="stylesheet">
-        </head>
+    <?php draw_head() ?>    
         <body>	
             <header id="searchHeader">
                 <div id="topNavBar">
                     <h1>Legit Renting</h1>
                     <div id="signUp">
-                        <a><?php echo $username?></a>
+                        <a href = ><?php echo $username?></a>
                     </div>
                 </div>
                 <div id="searchDiv">		
@@ -77,3 +75,32 @@
                 </div>	
             </header>
 <?php }?>
+
+<?php function draw_header_profile(){ ?>
+
+<?$username = $_GET['username'];?>
+
+<?php draw_head() ?>    
+    <body>	
+        <header id="searchHeader">
+            <div id="topNavBar">
+                <h1>Legit Renting</h1>
+                <div id="signUp">
+                    <a><?php echo $username?></a>
+                </div>
+            </div>
+        </header>
+<?php }?>
+
+
+<?php function draw_header_register(){ ?>
+
+<?php draw_head() ?>    
+    <body>	
+        <header id="searchHeader">
+            <div id="topNavBar">
+                <h1>Legit Renting</h1>
+            </div>
+        </header>
+<?php }?>
+
