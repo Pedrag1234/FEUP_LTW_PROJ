@@ -22,7 +22,7 @@
                     <div class="container">
                         <div id="signUp" class="vertical-center">
                             <a href="../pages/login.php">Login</a>
-                            <a href="login.html">Register</a>
+                            <a href="register_user.php">Register</a>
                         </div>
                     </div>
                 </div>
