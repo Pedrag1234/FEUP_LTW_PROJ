@@ -45,11 +45,11 @@
 <?php }?>
 
 
-<?php function draw_header_user(){ ?>
+<?php function draw_header_user(){
 
-    $username = $_POST['username'];
-
-    <?php draw_head() ?>    
+    $username = $_POST['Username'];
+    
+    draw_head() ?>    
         <body>	
             <header id="searchHeader">
                 <div id="topNavBar">
@@ -76,11 +76,11 @@
             </header>
 <?php }?>
 
-<?php function draw_header_profile(){ ?>
+<?php function draw_header_profile(){ 
 
-<?$username = $_GET['username'];?>
+$username = $_GET['username'];
 
-<?php draw_head() ?>    
+draw_head() ?>    
     <body>	
         <header id="searchHeader">
             <div id="topNavBar">
@@ -93,9 +93,9 @@
 <?php }?>
 
 
-<?php function draw_header_register(){ ?>
+<?php function draw_header_register(){
 
-<?php draw_head() ?>    
+draw_head() ?>    
     <body>	
         <header id="searchHeader">
             <div id="topNavBar">

@@ -26,7 +26,7 @@
 				$hash = password_hash($password,PASSWORD_DEFAULT, $options);
 
 				$stmt = $dbh->prepare('INSERT INTO user VALUES (?,?,?,0,?,"","")');
-				$stmt->execute(array($username,$password,$name,$dateofbirth));
+				$stmt->execute(array($username,$hash,$name,$birthdate));
 
 				return "User sucessfully created";
 			}

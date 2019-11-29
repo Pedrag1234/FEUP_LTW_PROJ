@@ -3,12 +3,10 @@
 
     $username = trim(strip_tags($_POST['Username']));
     $password = $_POST['Password'];
-    $confpassword = $_POST['ConfPassword'];
-    $name = $_POST['Name'];
-    $birthdate = $_POST['BirthDay'];
 
-    createUser($username,$password,$confpassword,$name,$birthdate);
-
+    verifyUser($username, $password);
+    
     header('Location: ../index.php');
    	die();
+    
 ?>
