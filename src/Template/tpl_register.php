@@ -1,6 +1,6 @@
 <?php function draw_register_form() {?>
     <div id ="RegisterForm">
-        <form action="action_register.php" method="post">
+        <form action="../actions/action_register.php" method="post">
             <label> Username
                 <input type="text" name="Username">
             </label>

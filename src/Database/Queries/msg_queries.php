@@ -1,5 +1,5 @@
 <?
-	include_once('Database/connection.php');
+	include_once('../Database/connection.php');
 
 	function getMessages($user1,$user2){
 		global $dbh;

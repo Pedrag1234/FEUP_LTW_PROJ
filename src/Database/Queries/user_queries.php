@@ -1,5 +1,5 @@
-<?
-	include_once('Database/connection.php');
+<?php
+	include_once('../Database/connection.php');
 
 	function verifyUser($username,$password){
 		global $dbh;

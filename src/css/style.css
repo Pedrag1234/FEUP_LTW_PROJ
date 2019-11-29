@@ -34,3 +34,10 @@ body {
   color: white;
   background-color: blue;
 }
+
+#RegisterForm{
+	background-color: rgb(150, 220, 255);
+}
+#LoginForm{
+	background-color: rgb(150, 220, 255);
+}

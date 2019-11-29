@@ -1,6 +1,6 @@
 <?php
 
-include_once('Database/Queries/house_queries.php');
+include_once('../Database/Queries/house_queries.php');
 
 function displayHouse($House){
 

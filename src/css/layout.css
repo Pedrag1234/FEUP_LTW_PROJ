@@ -1,3 +1,24 @@
+
+#RegisterForm > form {
+	margin: 1em;
+}
+
+#LoginForm > form {
+	margin: 1em;
+}
+
+#LoginForm > form > * {
+	display: block;
+	text-align: center;
+	padding: 0.5em;
+}
+
+#RegisterForm > form > * {
+	display: block;
+	text-align: center;
+	padding: 0.5em;
+}
+
 body{
 	display:grid;
 	width: 60em;
@@ -41,4 +62,3 @@ body{
 	grid-row-start: 1;
 	grid-row-end: 1;
 }
-

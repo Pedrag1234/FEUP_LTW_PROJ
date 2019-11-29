@@ -1,5 +1,5 @@
 <?php
-	include_once('Database/connection.php');
+	include_once('../Database/connection.php');
 
 	function getAllHouses(){
 		global $dbh;

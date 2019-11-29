@@ -6,8 +6,8 @@
             <title>Legit Renting</title>    
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link href="css/style.css" rel="stylesheet">
-            <link href="css/layout.css" rel="stylesheet">
+            <link href="../css/style.css" rel="stylesheet">
+            <link href="../css/layout.css" rel="stylesheet">
         </head>
         
 <?php }?>
@@ -21,7 +21,7 @@
                     <h1>Legit Renting</h1>
                     <div class="container">
                         <div id="signUp" class="vertical-center">
-                            <a href="../pages/login.php">Login</a>
+                            <a href="login.php">Login</a>
                             <a href="register_user.php">Register</a>
                         </div>
                     </div>
