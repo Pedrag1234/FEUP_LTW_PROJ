@@ -1,7 +1,7 @@
 <?php
 function draw_login() {?>
     <div id ="LoginForm">
-        <form action="action_login.php" method="post">
+        <form action="../actions/action_login.php" method="post">
             <label> Username
                 <input type="text" name="Username">
             </label>

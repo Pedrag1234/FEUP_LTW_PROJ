@@ -21,8 +21,14 @@
                     <h1>Legit Renting</h1>
                     <div class="container">
                         <div id="signUp" class="vertical-center">
-                            <a href="login.php">Login</a>
-                            <a href="register_user.php">Register</a>
+                            <?php if(isset($_SESSION['Username'])) {?>
+                                <a><?php echo $_SESSION['Username']?></a>
+                                <a href="../actions/action_logout.php">Logout</a>
+                            <?php } 
+                            else {?>
+                                <a href="login.php">Login</a>
+                                <a href="register_user.php">Register</a>
+                            <?php } ?>    
                         </div>
                     </div>
                 </div>
