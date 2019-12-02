@@ -1,9 +1,14 @@
+* {
+  font-family: Arial, sans-serif;
+  text-decoration: none;
+}
+
 body {
   margin: 0em;
+  background-color: black;
 }
 
 #searchDiv {
-  font-family: sans-serif;
   background-image: url("beach.jpg");
   color: rgb(100, 255, 100);
   text-shadow: 1px 1px black;
@@ -15,7 +20,6 @@ body {
 
 #topNavBar {
   display: grid;
-  font-family: sans-serif;
   background-color: darkblue;
   color: rgb(100, 255, 100);
   text-decoration: none;
@@ -33,11 +37,32 @@ body {
   margin: 1em;
   color: white;
   background-color: blue;
+  border-radius: 15px;
+  padding: 15px;
 }
 
 #RegisterForm{
+  background-image: url("house.jpg");
 	background-color: rgb(150, 220, 255);
 }
+
+#RegisterForm label {
+  color: white;
+  font-weight: 700;
+  font-family: Arial, sans-serif;
+}
+
 #LoginForm{
 	background-color: rgb(150, 220, 255);
+}
+
+#LoginForm label {
+  color: white;
+  font-weight: 700;
+}
+
+#Profile {
+  padding: 20px;
+  background-image: url("house2.jpg");
+  padding-bottom: 30em;
 }

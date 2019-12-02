@@ -18,11 +18,11 @@
         <body>	
             <header id="searchHeader">
                 <div id="topNavBar">
-                    <h1>Legit Renting</h1>
+                    <h1><a href="home.php">Legit Renting</a></h1>
                     <div class="container">
                         <div id="signUp" class="vertical-center">
                             <?php if(isset($_SESSION['Username'])) {?>
-                                <a><?php echo $_SESSION['Username']?></a>
+                                <a href = "user_profile.php"><?php echo $_SESSION['Username']?></a>
                                 <a href="../actions/action_logout.php">Logout</a>
                             <?php } 
                             else {?>
@@ -84,13 +84,13 @@
 
 <?php function draw_header_profile(){ 
 
-$username = $_GET['username'];
+$username = $_SESSION['Username'];
 
 draw_head() ?>    
     <body>	
         <header id="searchHeader">
             <div id="topNavBar">
-                <h1>Legit Renting</h1>
+                <h1><a href="home.php">Legit Renting</a></h1>
                 <div id="signUp">
                     <a><?php echo $username?></a>
                 </div>
@@ -105,7 +105,7 @@ draw_head() ?>
     <body>	
         <header id="searchHeader">
             <div id="topNavBar">
-                <h1>Legit Renting</h1>
+                <h1><a href="home.php">Legit Renting</a></h1>
             </div>
         </header>
 <?php }?>

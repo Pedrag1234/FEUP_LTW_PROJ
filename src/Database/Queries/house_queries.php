@@ -21,7 +21,7 @@
 	function getTopHouses(){
 		global $dbh;
 
-		$stmt = $dbh->prepare('SELECT * FROM house ORDER BY classificacao WHERE id_house = ? LIMIT 2');
+		$stmt = $dbh->prepare('SELECT * FROM house ORDER BY classificacao DESC LIMIT 5');
 		$stmt->execute();
 		return $stmt->fetchAll();
 	}

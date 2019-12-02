@@ -25,7 +25,7 @@
 				$options = ['cost' => 12];
 				$hash = password_hash($password,PASSWORD_DEFAULT, $options);
 
-				$stmt = $dbh->prepare('INSERT INTO user VALUES (?,?,?,0,?,"","")');
+				$stmt = $dbh->prepare('INSERT INTO user VALUES (?,?,?,0,?,"",LOAD_FILE("../css/house.jpg")');
 				$stmt->execute(array($username,$hash,$name,$birthdate));
 
 				return "User sucessfully created";
@@ -40,7 +40,7 @@
 		global $dbh;
 
 		$stmt = $dbh->prepare('SELECT * FROM user WHERE username = ?');
-		$stmt->execute();
+		$stmt->execute(array($username));
 		return $stmt->fetch();
 	}
 
