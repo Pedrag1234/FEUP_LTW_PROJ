@@ -52,4 +52,15 @@
 		return $stmt->fetchAll();
 	}
 
+	function editDescription($username, $newDescription){
+		
+		global $dbh;
+
+		$stmt = $dbh->prepare('UPDATE user SET about=? WHERE username = ?');
+		$stmt->execute(array($newDescription, $username));
+		return;
+
+	}
+
+
 ?>

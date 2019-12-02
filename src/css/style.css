@@ -60,12 +60,26 @@ body {
 }
 
 #Profile {
-  column-count: 2;
+  display: grid;
   padding: 20px;
   background-image: url("../images/house2.jpg");
   padding-bottom: 30em;
 }
 
-#Profile > img {
+#Profile > #menu {
+  grid-column: 3;
+  column-width: 100px;
+  padding: 20px;
+  float: right;
+  color: darkblue;
+}
+
+#Profile > #menu > a {
+  float: left;
+}
+
+
+#Profile img {
+  grid-column: 2;
   float: right;
 }
