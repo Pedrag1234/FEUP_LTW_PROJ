@@ -14,6 +14,7 @@
             <h3>Date of birth: <?php echo $date_of_birth ?></h3>
             <h3>About: </h3>
             <a><?php echo $about ?></a>
+            <?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $user['photo'] ).'"/>'; ?>
         </div>
         <?php
 

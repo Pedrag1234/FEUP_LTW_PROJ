@@ -91,8 +91,11 @@ draw_head() ?>
         <header id="searchHeader">
             <div id="topNavBar">
                 <h1><a href="home.php">Legit Renting</a></h1>
-                <div id="signUp">
-                    <a><?php echo $username?></a>
+                <div class="container">
+                    <div id="signUp" class="vertical-center">
+                        <a><?php echo $username?></a>
+                        <a href="../actions/action_logout.php">Logout</a>
+                    </div>
                 </div>
             </div>
         </header>
