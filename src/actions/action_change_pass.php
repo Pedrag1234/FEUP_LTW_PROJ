@@ -4,7 +4,7 @@
 
     if ($_GET['newPassword'] != ""){
         if (changePassword($_SESSION['Username'], $_GET['oldPassword'], $_GET['newPassword'], $_GET['confPassword']))
-            header('Location: ../index.php');
+            header('Location: ../pages/profile.php');
         else header('Location: ../pages/change_pass.php');
     }
     else header('Location: ../pages/change_pass.php');

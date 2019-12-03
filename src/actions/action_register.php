@@ -9,6 +9,8 @@
 
     createUser($username,$password,$confpassword,$name,$birthdate);
 
+    $_SESSION['Username'] = $username;
+
     header('Location: ../index.php');
    	die();
 ?>

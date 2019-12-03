@@ -4,7 +4,6 @@ CREATE TABLE [user]
 	username VARCHAR PRIMARY KEY,
 	password VARCHAR NOT NULL,
 	name VARCHAR,
-	age INTEGER,
 	date_of_birth DATE,
 	about VARCHAR,
 	photo VARCHAR

@@ -83,5 +83,34 @@
 
 	}
 
+	function editBirthDate($username, $date){
+		
+		global $dbh;
+
+		$stmt = $dbh->prepare('UPDATE user SET date_of_birth=? WHERE username = ?');
+		$stmt->execute(array($date, $username));
+		return;
+	}
+
+
+	function editProfile($username, $name, $newUsername, $date_of_birth, $presentation){
+		
+		global $dbh;
+
+		$stmt = $dbh->prepare('UPDATE user SET name=?, username=?, date_of_birth=?, about=? WHERE username = ?');
+		$stmt->execute(array($name, $newUsername, $date_of_birth, $presentation, $username));
+		$_SESSION['Username'] = $newUsername;
+
+		return;
+	}
+	
+	function editProfilePicture($username, $photo){
+		
+		global $dbh;
+
+		$stmt = $dbh->prepare('UPDATE user SET photo=? WHERE username = ?');
+		$stmt->execute(array($photo, $username));
+		return;
+	}
 
 ?>
