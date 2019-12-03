@@ -63,9 +63,8 @@ body {
   display: grid;
   padding: 20px;
   background-image: url("../images/house2.jpg");
-  padding-bottom: 30em;
+  height: 725px;
 }
-
 #Profile > #menu {
   grid-column: 3;
   column-width: 100px;

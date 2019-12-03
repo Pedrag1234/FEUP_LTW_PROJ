@@ -21,7 +21,7 @@
             </div>
             <div id=menu>
                 <h4><a href="edit_profile.php">Editar perfil</a></h4>
-                <h4>Alterar senha</h4>
+                <h4><a href="change_pass.php">Alterar senha</a></h4>
                 <h4>Editar propriedades</h4>
             </div>
         </div>
@@ -34,8 +34,24 @@
         ?>
         <div id="Profile">
             <form action="../actions/action_edit_profile.php">
-                <h4>Mudar descrição</h4>
-                <input type="description" name="description" min="0">
+                <h4>Mudar apresentação</h4>
+                <input type="text" name="description" min="0">
+                <button type="submit">salvar</button>
+            </form>
+        </div>
+        <?php
+    }    
+    function draw_change_pass(){
+        ?>
+        <div id="Profile">
+            <form action="../actions/action_change_pass.php">
+                <h4>Alterar senha</h4>
+                <h5>Senha antiga:</h5>
+                <input type="text" name="oldPassword" min="0">
+                <h5>Senha nova:</h5>
+                <input type="text" name="newPassword" min="0">
+                <h5>Confirmar senha nova:</h5>
+                <input type="text" name="confPassword" min="0">
                 <button type="submit">salvar</button>
             </form>
         </div>

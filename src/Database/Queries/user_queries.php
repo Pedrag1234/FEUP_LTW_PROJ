@@ -62,5 +62,26 @@
 
 	}
 
+	function changePassword($username, $oldPassword, $newPassword, $confPassword){
+		
+		global $dbh;
+		if (!verifyUser($username,$oldPassword)){
+			return false;
+		}
+		else if ($newPassword != $confPassword) {
+			return false;
+		}
+		else{
+				$options = ['cost' => 12];
+				$hash = password_hash($newPassword,PASSWORD_DEFAULT, $options);
+				$stmt = $dbh->prepare('UPDATE user SET password=? WHERE username = ?');
+				$stmt->execute(array($hash, $username));
+
+				return true;
+
+		}
+
+	}
+
 
 ?>
