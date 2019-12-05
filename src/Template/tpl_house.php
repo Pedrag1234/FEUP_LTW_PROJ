@@ -2,8 +2,7 @@
     include_once('../Database/Queries/house_queries.php');
 
     function getHouseInfo($id){ 
-        $house = getHouse($id); 
-        print_r($house);?>
+        $house = getHouse($id); ?>
         <div id="house">
             <h1><?php echo $house['title']; ?></h1>
             <a><?php echo $house['description']; ?></a>

@@ -3,7 +3,7 @@
     include('../Template/common/footer.php');
     include('../Template/tpl_house.php');
 
-    $house_id = $_GET['house_id'];
+    $house_id = $_GET['id_house'];
 
     if (isset($_SESSION['Username'])) {
         draw_header_profile();

@@ -14,7 +14,7 @@
 		global $dbh;
 
 		$stmt = $dbh->prepare('SELECT * FROM house WHERE id_house = ?');
-		$stmt->execute();
+		$stmt->execute(array($id));
 		return $stmt->fetch();
 	}
 	
@@ -30,7 +30,7 @@
 		global $dbh;
 
 		$stmt = $dbh->prepare('SELECT * FROM house WHERE id_owner = ?');
-		$stmt->execute();
+		$stmt->execute(array($username));
 		return $stmt->fetchAll();
 	}
 
