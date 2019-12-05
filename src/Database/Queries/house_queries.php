@@ -26,5 +26,13 @@
 		return $stmt->fetchAll();
 	}
 
+	function getHousesByUser($username){
+		global $dbh;
+
+		$stmt = $dbh->prepare('SELECT * FROM house WHERE id_owner = ?');
+		$stmt->execute();
+		return $stmt->fetchAll();
+	}
+
 
 ?>
