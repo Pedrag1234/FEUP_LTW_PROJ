@@ -3,7 +3,6 @@
 include_once('../Database/Queries/house_queries.php');
 
 function displayHouse($House){
-
     ?>
     <div id="house">
         <h1><a href="house.php?id_house=<?php echo $House['id_house']?>"><?php echo $House['title']; ?></a></h1>

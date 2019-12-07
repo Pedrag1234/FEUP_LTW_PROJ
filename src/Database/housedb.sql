@@ -82,7 +82,7 @@ INSERT INTO [user]
 VALUES
 	(
 		"Pedrag123",
-		"Goddamn",
+		"$2y$12$GJvj8.qkH4hqNsyik84yU.2jGCxNI03e4BN0Inn2InarBcV6JT0JG",
 		"Pedro Azevedo",
 		21,
 		"1998-03-10",

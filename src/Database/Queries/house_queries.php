@@ -34,5 +34,36 @@
 		return $stmt->fetchAll();
 	}
 
+	function getHousePics($id){
+		global $dbh;
+
+		$stmt = $dbh->prepare('SELECT * FROM photo WHERE id_house = ?');
+		$stmt->execute(array($id));
+		return $stmt->fetchAll();
+	}
+	
+	function createHouse($title,$rent,$location,$desc,$area,$maxg,$rooms,$baths,$username){
+		
+		global $dbh;
+
+		$stmt = $dbh->prepare('INSERT INTO house VALUES(null,?,?,?,?,0,?,?,?,?,?)');
+		$stmt->execute(array($rent,$location,$title,$maxg,$desc,$area,$rooms,$baths,$username));
+
+	}
+
+	function addHousePhotos($house_id,$photo){
+		global $dbh;
+
+		$house = getHouse($house_id);
+
+		if (empty($house)) {
+			return;
+		}
+		else{
+			$stmt = $dbh->prepare('UPDATE photo SET photo = ? WHERE id_house = ?');
+			$stmt->execute(array($house_id,$photo));
+			return;
+		}
+	}
 
 ?>

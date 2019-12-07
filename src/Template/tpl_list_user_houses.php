@@ -1,5 +1,7 @@
 <?php 
     include_once('../Database/Queries/house_queries.php');
+    include_once('../Template/tpl_home.php');
+    include_once('../Template/tpl_add_house.php');
 
 function list_user_houses(){ 
 
@@ -8,17 +10,19 @@ function list_user_houses(){
     
     <?php if (empty($houses)) { ?>
         <h2>No houses found</h2>
-    <?php } else { 
+        <h3>Add House</h3>
+    <?php add_House();
+    } else { 
 
-       foreach($houses as $house){ ?>
-            <div id="house">
-                <h1><?php echo $House['title']; ?></h1>
-                <a><?php echo $House['description']; ?></a>
-                <br><br>
-                <a><?php echo $House['location']; ?></a>
-            </div>
-       <?php } ?>
+       foreach($houses as $house){ 
+            displayHouse($house);
+        } ?>
+       <h3>Add House</h3>
+    <?php add_House();
+} ?>
 
-    <?php } ?>
+<?php }
 
-<?php } ?>
+
+
+?>
