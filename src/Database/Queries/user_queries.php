@@ -14,25 +14,29 @@
 
 
 	function createUser($username,$password,$confpassword,$name,$birthdate){
+		if ($username == "")
+			return "Choose a username, please";
+		else if (strlen($password) < 8)
+			return "The password must have at least 8 digits";
+		else if ($name == "")
+			return "It's necessary to inform your name";
+		else if ($birthdate == "")
+			return "It's necessary to inform your date of birth";
+		
 		global $dbh;
-
-		if ($password != $confpassword) {
-			return "Pswd doesn't match";
-		}
+		$temp = getUser($username);
+		if ($temp != false)
+			return "Username already exists";
+		else if ($password != $confpassword)
+			return "Passwords don't match";
 		else{
-			$temp = getUser($username);
-			if ($temp == false) {
-				$options = ['cost' => 12];
-				$hash = password_hash($password,PASSWORD_DEFAULT, $options);
-				$img = file_get_contents("../images/empty_profile_pic.jpg");
-				$stmt = $dbh->prepare('INSERT INTO user VALUES (?,?,?,0,?,"",?)');
-				$stmt->execute(array($username,$hash,$name,$birthdate, $img));
+			$options = ['cost' => 12];
+			$hash = password_hash($password,PASSWORD_DEFAULT, $options);
+			$img = file_get_contents("../images/empty_profile_pic.jpg");
+			$stmt = $dbh->prepare('INSERT INTO user VALUES (?,?,?,0,?,"",?)');
+			$stmt->execute(array($username,$hash,$name,$birthdate, $img));
 
-				return "User sucessfully created";
-			}
-			else{
-				return "username already exists";
-			}
+			return "User sucessfully created";
 		}
 	}
 

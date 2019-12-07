@@ -7,10 +7,16 @@
     $name = $_POST['Name'];
     $birthdate = $_POST['BirthDay'];
 
-    createUser($username,$password,$confpassword,$name,$birthdate);
+    $msg = createUser($username,$password,$confpassword,$name,$birthdate);
 
-    $_SESSION['Username'] = $username;
-
-    header('Location: ../index.php');
+    $_POST['RegError'] = $msg;
+    if($msg == "User sucessfully created"){
+        $_SESSION['Username'] = $username;
+        header('Location: ../index.php');
+    }
+    else {
+        $_POST['RegError'] = $msg;
+        header('Location: ../pages/register_user.php?RegError='.$msg);
+    }
    	die();
 ?>
