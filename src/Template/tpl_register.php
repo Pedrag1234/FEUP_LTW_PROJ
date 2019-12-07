@@ -10,9 +10,9 @@ function draw_register_form() {?>
     <div id ="RegisterForm">
         <div id=error>
             <?php 
-                if (isset($_GET['RegError'])) { 
+                if (isset($_GET['error'])) { 
                     ?><h3><?php
-                    echo $_GET['RegError']; 
+                    echo $_GET['error']; 
                     ?></h3><?php
                 }
             ?>

@@ -9,14 +9,13 @@
 
     $msg = createUser($username,$password,$confpassword,$name,$birthdate);
 
-    $_POST['RegError'] = $msg;
     if($msg == "User sucessfully created"){
         $_SESSION['Username'] = $username;
         header('Location: ../index.php');
     }
     else {
         $_POST['RegError'] = $msg;
-        header('Location: ../pages/register_user.php?RegError='.$msg);
+        header('Location: ../pages/register_user.php?error='.$msg);
     }
    	die();
 ?>
