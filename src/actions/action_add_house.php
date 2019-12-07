@@ -34,7 +34,7 @@
             return;
         }*/
     //}
-    header('Location: ../pages/user_profile.php');
+    header('Location: ../pages/user_houses.php');
     die();
 
 ?>

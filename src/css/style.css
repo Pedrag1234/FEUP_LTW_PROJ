@@ -6,7 +6,7 @@
 body {
   margin: 0em;
   margin: 0px;
-  background-color: black;
+  background-color: gray;
 }
 
 #searchDiv {
@@ -107,7 +107,7 @@ h2 {
   color: white;
 }
 
-#error{
+#error {
   color: red;
   text-align: center;
 }
