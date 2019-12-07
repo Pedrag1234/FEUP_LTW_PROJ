@@ -106,3 +106,8 @@ body {
 h2 {
   color: white;
 }
+
+#error{
+  color: red;
+  text-align: center;
+}

@@ -1,5 +1,22 @@
-<?php function draw_register_form() {?>
+<?php 
+
+function console_log( $data ){
+    echo '<script>';
+    echo 'console.log('. json_encode( $data ) .')';
+    echo '</script>';
+  }
+
+function draw_register_form() {?>
     <div id ="RegisterForm">
+        <div id=error>
+            <?php 
+                if (isset($_GET['error'])) { 
+                    ?><h3><?php
+                    echo $_GET['error']; 
+                    ?></h3><?php
+                }
+            ?>
+        </div>
         <form action="../actions/action_register.php" method="post">
             <label> Username
                 <input type="text" name="Username" maxlength="20">
@@ -20,4 +37,5 @@
         </form>
     </div>
 
-<?php } ?>
+<?php } 
+?>

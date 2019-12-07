@@ -9,7 +9,8 @@
     	header('Location: ../index.php');
    		die();
     }
-    	header('Location: ../pages/login.php')
+    else
+    	header('Location: ../pages/login.php?error=Wrong username or password')
     
 
 ?>
