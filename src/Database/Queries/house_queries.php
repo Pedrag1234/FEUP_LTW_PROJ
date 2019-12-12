@@ -48,7 +48,9 @@
 
 		$stmt = $dbh->prepare('INSERT INTO house VALUES(null,?,?,?,?,0,?,?,?,?,?)');
 		$stmt->execute(array($rent,$location,$title,$maxg,$desc,$area,$rooms,$baths,$username));
-
+		
+		$result = $dbh->query('SELECT last_insert_rowid() as last_insert_rowid')->fetch();
+    	return $result['last_insert_rowid'];
 	}
 
 	function addHousePhotos($house_id,$photo){
@@ -60,7 +62,7 @@
 			return;
 		}
 		else{
-			$stmt = $dbh->prepare('UPDATE photo SET photo = ? WHERE id_house = ?');
+			$stmt = $dbh->prepare('INSERT INTO photo VALUES(null,?,?)');
 			$stmt->execute(array($house_id,$photo));
 			return;
 		}

@@ -13,6 +13,10 @@
                 </div>
             </div>
         <?php }
+
+        else{
+            echo "<h1> Upload works <\h1>";
+        }
     }
 
 

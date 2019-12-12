@@ -27,6 +27,9 @@ function add_House(){ ?>
             <label> Nº of Bathrooms
                 <input type="number" name="NofBathrooms">
             </label>
+            <label> Photos
+                <input name="housephotos[]" type="file" multiple="multiple" />
+            </label>
             <button type="submit">Add House</button>
         </form>
     </div>
