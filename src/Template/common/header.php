@@ -112,4 +112,3 @@ draw_head() ?>
             </div>
         </header>
 <?php }?>
-

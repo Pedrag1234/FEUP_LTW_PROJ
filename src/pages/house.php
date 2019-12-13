@@ -13,9 +13,9 @@
         draw_header_index();
     }
 
-    getHouseInfo($house_id);
     pic_slider($house_id);
-
+    getHouseInfo($house_id);
     
+
     draw_footer();
 ?>
