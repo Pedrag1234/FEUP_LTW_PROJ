@@ -31,7 +31,6 @@
             $target_dir = "../images/";
             $n_photos = count($_FILES['housephotos']['name']);
                 for($i = 0; $i < $n_photos; $i++){
-                    sleep(30);
                     $target_file = $target_dir . basename($_FILES['housephotos']['name'][$i]);
                     $uploadOk = 1;
                     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -45,10 +44,10 @@
                         $uploadOk = 0;
                     }
 
-                    if ($_FILES["housephotos"][$i]["size"] > 500000) {
+                    /*if ($_FILES["housephotos"][$i]["size"] > 500000) {
                         echo "Sorry, your file is too large.";
                         $uploadOk = 0;
-                    }
+                    }*/
 
                     if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
                     && $imageFileType != "gif" ) {

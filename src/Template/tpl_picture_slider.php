@@ -15,7 +15,9 @@
         <?php }
 
         else{
-            echo "<h1> Upload works <\h1>";
+            foreach($pics as $pic){ ?>
+                <div><?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $pic['photo'] ).'"/>'; ?></div>
+            <?php }
         }
     }
 

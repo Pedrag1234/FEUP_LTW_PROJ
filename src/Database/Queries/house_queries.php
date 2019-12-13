@@ -63,7 +63,7 @@
 		}
 		else{
 			$stmt = $dbh->prepare('INSERT INTO photo VALUES(null,?,?)');
-			$stmt->execute(array($house_id,$photo));
+			$stmt->execute(array($photo,$house_id));
 			return;
 		}
 	}

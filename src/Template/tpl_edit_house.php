@@ -1,14 +1,14 @@
 <?php 
 
-function add_House(){ ?>
+function edit_House(){ ?>
     <div id="AddHouseForm">
-        <form action="../actions/action_add_house.php" method="post" enctype="multipart/form-data">
+        <form action="../actions/action_edit_house.php" method="post">
             <label> Title
                 <input type="text" name="Title" maxlength="100">
             </label>
             <label> Rent Price
                 <input type="number" name="Rent">
-            </label
+            </label>
             <label> Location
                 <input type="text" name="Location" maxlength="100">
             </label>
@@ -30,7 +30,7 @@ function add_House(){ ?>
             <label> Photos
                 <input name="housephotos[]" type="file" multiple="multiple" />
             </label>
-            <button type="submit">Add House</button>
+            <button type="submit">Edit</button>
         </form>
     </div>
 <?php } ?>
