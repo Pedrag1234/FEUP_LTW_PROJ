@@ -12,7 +12,8 @@
             <a><?php echo $house['rent']; ?></a>
             <a><?php echo $house['classificacao']; ?></a>
             <?php if(isset($_SESSION['Username']) == true && $_SESSION['Username'] == $house['id_owner']){?>
-                <a href="edit_house.php?id_house="<?php echo $house['id_house'] ?> >Edit House Info</a>
+                <?php print_r($_SESSION); ?>
+                <a href="edit_house.php?id_house=<?php echo $house['id_house']?>">Edit House Info</a>
             <?php } ?>    
         </div> 
         

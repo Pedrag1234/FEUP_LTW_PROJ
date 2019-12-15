@@ -68,4 +68,12 @@
 		}
 	}
 
+	function updateHouse($title,$rent,$location,$desc,$area,$maxg,$rooms,$baths,$id){
+		
+		global $dbh;
+
+		$stmt = $dbh->prepare('UPDATE house SET rent=?, location=?, title=?, max_guests=?, description=?, area=?, quartos=?, casas_de_banho=? WHERE id_house=?');
+		$stmt->execute(array($rent,$location,$title,$maxg,$desc,$area,$rooms,$baths,$id));
+	}
+
 ?>
