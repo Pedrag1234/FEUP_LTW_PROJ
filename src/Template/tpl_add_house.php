@@ -2,6 +2,7 @@
 
 function add_House(){ ?>
     <div id="AddHouseForm">
+    <h3>Add House</h3>
         <form action="../actions/action_add_house.php" method="post" enctype="multipart/form-data">
             <label> Title
                 <input type="text" name="Title" maxlength="100">
@@ -13,7 +14,7 @@ function add_House(){ ?>
                 <input type="text" name="Location" maxlength="100">
             </label>
             <label> Description
-                <input type="text" name="Description" maxlength="256">
+                <textarea cols="23" rows="5" name="Description"></textarea>
             </label>
             <label> Area
                 <input type="number" name="Area">

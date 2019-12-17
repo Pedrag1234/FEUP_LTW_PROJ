@@ -9,14 +9,14 @@ function edit_House($house_id){
             <label> Title
                 <input type="text" name="Title" maxlength="100" value='<?php echo $house['title'] ?>'>
             </label>
-            <label> Rent Price
-                <input type="number" name="Rent" value='<?php echo $house['rent'] ?>'>
-            </label>
             <label> Location
                 <input type="text" name="Location" maxlength="100" value='<?php echo $house['location'] ?>'>
             </label>
+            <label> Rent Price
+                <input type="number" name="Rent" value='<?php echo $house['rent'] ?>'>
+            </label>
             <label> Description
-                <input type="text" name="Description" maxlength="256" value='<?php echo $house['description'] ?>'>
+            <textarea cols="23" rows="5" name="Description"><?php echo $house['description'] ?></textarea>
             </label>
             <label> Area
                 <input type="number" name="Area" value='<?php echo $house['area'] ?>'>

@@ -20,6 +20,11 @@
         $n_baths = $_POST['NofBathrooms'];
 
         $username = $_SESSION['Username'];
+
+        if (!preg_match("/^[0-9a-zA-Z\s]+$/",$title) || !preg_match("/^[0-9a-zA-Z\s]+$/",$location) || !preg_match("/^[0-9a-zA-Z\s]+$/",$description)) {
+            header('Location: ../pages/user_houses.php');
+            die();
+        }
         
     
             $id = createHouse($title,$rent,$location,$description,$area,$maxguests,$n_rooms,$n_baths,$username);

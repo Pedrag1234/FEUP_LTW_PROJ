@@ -199,3 +199,42 @@ h2 {
     opacity: 1;
   }
 }
+
+#AddHouseForm {
+  display: table-caption;
+  max-width: 200px;
+  padding: 10px 20px 10px 20px;
+  border: solid;
+  border-color: oldlace;
+  background-color: turquoise;
+}
+
+#AddHouseForm label {
+  margin: 0 3px 3px 0;
+  padding: 0px;
+  display: block;
+  font-weight: bold;
+}
+
+#AddHouseForm input[type="number"] {
+  width: 50px;
+}
+
+#AddHouseForm input[type="number"]:focus,
+#AddHouseForm input[type="text"]:focus {
+  border: 2px solid #555;
+}
+
+#AddHouseForm input[name="Title"],
+#AddHouseForm input[name="Location"] {
+  width: 200px;
+  height: 20px;
+}
+
+#AddHouseForm input[name="Description"] {
+  width: 200px;
+  height: 200px;
+}
+#AddHouseForm textarea {
+  width: 200px;
+}

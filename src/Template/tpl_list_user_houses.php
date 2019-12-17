@@ -10,14 +10,12 @@ function list_user_houses(){
     
     <?php if (empty($houses)) { ?>
         <h2>No houses found</h2>
-        <h3>Add House</h3>
     <?php add_House();
     } else { 
 
        foreach($houses as $house){ 
             displayHouse($house);
         } ?>
-       <h3>Add House</h3>
     <?php add_House();
 } ?>
 
