@@ -5,7 +5,7 @@ function edit_House($house_id){
     $house = getHouse($house_id);?>
 
     <div id="AddHouseForm">
-        <form action="../actions/action_edit_house.php" method="post" >
+        <form action="../actions/action_edit_house.php" method="post" enctype="multipart/form-data">
             <label> Title
                 <input type="text" name="Title" maxlength="100" value='<?php echo $house['title'] ?>'>
             </label>
