@@ -117,4 +117,70 @@
 		return;
 	}
 
+	
+	function register_wrong_login($username, $address){
+		
+
+		global $dbh;
+
+		$stmt = $dbh->prepare('SELECT * FROM wrong_login WHERE username = ? AND ip_address=?');
+		$stmt->execute(array($username, $address));
+
+		$result = $stmt->fetch();
+
+
+
+		$now = "20" . date("y-m-d h:i:s");
+		
+		
+		if ($result == false){
+			$stmt = $dbh->prepare('INSERT INTO  wrong_login VALUES (?, ?, ?, 1)');
+			$stmt->execute(array($username, $address, $now));
+			return 1;
+		}
+		else if ( strtotime($now) - strtotime($result['date_time']) > 60) {			
+			$number = 1;
+			$stmt = $dbh->prepare('UPDATE wrong_login SET username=?, ip_address=?, date_time=?, n_times=? WHERE username = ? AND ip_address=?');
+			$stmt->execute(array($username, $address, $now, $number, $username, $address));
+			return 1;
+		}
+		else {
+			$number = $result['n_times'] + 1;
+			$stmt = $dbh->prepare('UPDATE wrong_login SET username=?, ip_address=?, date_time=?, n_times=? WHERE username = ? AND ip_address=?');
+			$stmt->execute(array($username, $address, $now, $number, $username, $address));
+			return $number;
+		}
+
+	}	
+	function getWrongLogin($username, $address){
+		
+		global $dbh;
+
+		$stmt = $dbh->prepare('SELECT * FROM wrong_login WHERE username = ? AND ip_address=?');
+		$stmt->execute(array($username, $address));
+		echo $stmt->fetch();
+
+
+	}
+
+	function userBlocked($username, $address){
+
+		global $dbh;
+
+		$stmt = $dbh->prepare('SELECT * FROM wrong_login WHERE username = ? AND ip_address=?');
+		$stmt->execute(array($username, $address));
+
+		$result = $stmt->fetch();		
+
+		if ($result == false) return false;
+		else if ($result['n_times'] < 3) return false;
+		else {
+			$now = "20" . date("y-m-d h:i:s");
+			if (strtotime($now) - strtotime($result['date_time']) > 600) return false;
+			else return true;
+		}
+
+
+	}
+
 ?>

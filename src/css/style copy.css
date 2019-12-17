@@ -1,0 +1,126 @@
+* {
+  font-family: Arial, sans-serif;
+  text-decoration: none;
+}
+
+body {
+  margin: 0em;
+  margin: 0px;
+  background-color: black;
+}
+
+#searchDiv {
+  background-image: url("../images/beach.jpg");
+  color: rgb(100, 255, 100);
+  text-shadow: 1px 1px black;
+  margin: 0em;
+  padding: 0.5em;
+  padding-top: 0.1em;
+}
+
+#topNavBar {
+  display: grid;
+  background-color: darkblue;
+  color: rgb(100, 255, 100);
+  margin: 0em;
+}
+#topNavBar > h1 {
+  text-shadow: 1px 1px black;
+  margin-left: 0.5em;
+}
+#topNavBar * {
+  color: rgb(150, 220, 255);
+}
+
+#house {
+  margin: 1em;
+  color: white;
+  background-color: blue;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+#RegisterForm {
+  background-image: url("../images/house.jpg");
+  background-color: rgb(150, 220, 255);
+  height: 300px;
+}
+
+#RegisterForm label {
+  color: white;
+  font-weight: 700;
+  height: 38;
+}
+
+#LoginForm {
+  background-color: rgb(150, 220, 255);
+}
+
+#LoginForm label {
+  color: white;
+  font-weight: 700;
+}
+
+#Profile {
+  display: grid;
+  background-image: url("../images/house2.jpg");
+  height: 725px;
+}
+
+#Profile > * {
+  padding: 20px;
+  max-width: 350px;
+}
+
+#Profile > #info {
+  min-width: 350px;
+}
+
+#Profile > #menu {
+  width: 180px;
+  grid-column: 3;
+  padding: 20px;
+  float: right;
+  background-color: rgb(30, 150, 30);
+}
+#Profile > #menu * {
+  font-weight: bold;
+  font-size: 28;
+  margin-bottom: 1em;
+  color: white;
+}
+
+#Profile > #menu > a {
+  float: left;
+}
+
+#Profile img {
+  width: 250px;
+  grid-column: 2;
+}
+
+#Profile #centerdiv a {
+  font-weight: bold;
+}
+
+h2 {
+  color: white;
+}
+
+
+
+#ChangeProf {
+  background-image: url("../images/house2.jpg");
+  height: 725px;
+}
+#ChangeProf > * {
+	text-align: center;
+	padding: 0.5em;
+  float: center;
+}
+#error{
+  color: red;
+  text-align: center;
+  row-gap: 2em;
+  height: 2em;
+}

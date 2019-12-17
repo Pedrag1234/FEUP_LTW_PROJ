@@ -9,7 +9,13 @@ CREATE TABLE [user]
 	photo VARCHAR
 );
 
-
+CREATE TABLE wrong_login 
+(
+	username VARCHAR,
+	ip_address VARCHAR,
+	date_time DATETIME,
+	n_times INTEGER
+);
 
 CREATE TABLE house
 (

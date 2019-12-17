@@ -67,6 +67,12 @@ body {
   height: 725px;
 }
 
+#Profile {
+  display: grid;
+  background-image: url("../images/house2.jpg");
+  height: 725px;
+}
+
 #Profile > * {
   padding: 20px;
   max-width: 350px;
@@ -107,9 +113,20 @@ h2 {
   color: white;
 }
 
-#error {
+#ChangeProf {
+  background-image: url("../images/house2.jpg");
+  height: 725px;
+}
+#ChangeProf > * {
+	text-align: left;
+	padding: 1em;
+  float: left;
+}
+#error{
   color: red;
   text-align: center;
+  row-gap: 2em;
+  height: 2em;
 }
 
 /* Slideshow container */

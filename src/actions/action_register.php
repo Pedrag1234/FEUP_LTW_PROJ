@@ -1,11 +1,12 @@
 <?php 
     include_once('../Database/Queries/user_queries.php');
+    include_once('input.php');
 
-    $username = trim(strip_tags($_POST['Username']));
-    $password = $_POST['Password'];
-    $confpassword = $_POST['ConfPassword'];
-    $name = $_POST['Name'];
-    $birthdate = $_POST['BirthDay'];
+    $username = validateInput($_POST['Username']);
+    $password = validateInput($_POST['Password']);
+    $confpassword = validateInput($_POST['ConfPassword']);
+    $name = validateInput($_POST['Name']);
+    $birthdate = validateInput($_POST['BirthDay']);
 
     $msg = createUser($username,$password,$confpassword,$name,$birthdate);
 

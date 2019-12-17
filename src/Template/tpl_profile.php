@@ -44,8 +44,17 @@
         $date = $user['date_of_birth'];
 
         ?>
-        <div id="Profile">
-            <form action="../actions/action_edit_profile.php">
+        <div id="ChangeProf">
+            <div id=error>
+                <?php 
+                    if (isset($_GET['error'])) { 
+                        ?><h3><?php
+                        echo $_GET['error']; 
+                        ?></h3><?php
+                    }
+                ?>
+            </div>
+            <form action="../actions/action_edit_profile.php" method="post">
                 <h4>Nome</h4>
                 <input type="text" name="name" value = '<?php echo $name ?>' maxlength="40">
                 <h4>Nome de utilizador</h4>
@@ -55,6 +64,7 @@
                 <h4>Apresentação</h4>
                 <textarea name="description" rows="10" cols="30" maxlength="500"><?php echo $presentation ?></textarea>
                 <br><br>
+                <input type="hidden" name='csrf' value="<?=$_SESSION['csrf'];?>">
                 <button type="submit">salvar</button>
             </form>
         </div>
@@ -62,8 +72,17 @@
     }    
     function draw_change_pass(){
         ?>
-        <div id="Profile">
-            <form action="../actions/action_change_pass.php">
+        <div id="ChangeProf">
+            <div id=error>
+                <?php 
+                    if (isset($_GET['error'])) { 
+                        ?><h3><?php
+                        echo $_GET['error']; 
+                        ?></h3><?php
+                    }
+                ?>
+            </div>
+            <form action="../actions/action_change_pass.php" method="post">
                 <h4>Alterar senha</h4>
                 <h5>Senha antiga:</h5>
                 <input type="password" name="oldPassword" min="0" maxlength="40">
@@ -71,6 +90,7 @@
                 <input type="password" name="newPassword" min="0" maxlength="40">
                 <h5>Confirmar senha nova:</h5>
                 <input type="password" name="confPassword" min="0" maxlength="40">
+                <input type="hidden" name="csrf" value="<?=$_SESSION['csrf'];?>">
                 <button type="submit">salvar</button>
             </form>
         </div>
