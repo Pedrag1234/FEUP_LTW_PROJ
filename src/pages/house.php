@@ -2,7 +2,8 @@
     include('../Template/common/header.php');
     include('../Template/common/footer.php');
     include('../Template/tpl_house.php');
-    include('../Template/tpl_picture_slider.php');
+    include('../Template/tpl_review.php');
+    //include('../Template/tpl_picture_slider.php');
 
     $house_id = $_GET['id_house'];
 
@@ -13,8 +14,9 @@
         draw_header_index();
     }
 
-    pic_slider($house_id);
+    //pic_slider($house_id);
     getHouseInfo($house_id);
+    drawReviews($house_id);
     
 
     draw_footer();

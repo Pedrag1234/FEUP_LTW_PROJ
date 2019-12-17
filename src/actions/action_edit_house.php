@@ -63,11 +63,6 @@ else{
         
         }
 
-
-
-
-
-
         header('Location: ../pages/user_houses.php');
         die();
         
