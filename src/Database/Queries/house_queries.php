@@ -46,7 +46,7 @@
 		
 		global $dbh;
 
-		$stmt = $dbh->prepare('INSERT INTO house VALUES(null,?,?,?,?,0,?,?,?,?,?)');
+		$stmt = $dbh->prepare('INSERT INTO house VALUES(null,?,?,?,?,1,?,?,?,?,?)');
 		$stmt->execute(array($rent,$location,$title,$maxg,$desc,$area,$rooms,$baths,$username));
 		
 		$result = $dbh->query('SELECT last_insert_rowid() as last_insert_rowid')->fetch();

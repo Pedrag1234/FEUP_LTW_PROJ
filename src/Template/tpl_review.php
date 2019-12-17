@@ -9,6 +9,7 @@
             echo "<h3>No reviews found</h3>";
         }
         else{
+            //print_r($reviews);
             foreach($reviews as $review){
                 drawReview($review);
             }
@@ -18,9 +19,9 @@
     function drawReview($review){
         $user = getUser($review['id_user']); ?>
             <div id="review">
-                <h3><?php $review['review_c'] ?></h3>
-                <p><?php $review['rating'] ?> </p> 
-                <p> <?php $review['id_user'] ?><p>
+                <h3><?php echo $review['review_c'] ?></h3>
+                <p><?php echo $review['rating'] ?> </p> 
+                <p> <?php echo $review['id_user'] ?><p>
             </div>
        <?php 
     }
