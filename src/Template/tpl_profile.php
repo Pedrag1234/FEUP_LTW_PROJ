@@ -1,5 +1,6 @@
 <?php
     include_once('../Database/Queries/user_queries.php');
+    include_once('../Template/common/header.php');
 
     function draw_profile(){
         $username = $_SESSION['Username'];
@@ -9,24 +10,28 @@
         $about = $user['about'];
         ?>
         <div id="Profile">
-            <div id="info">
-                <h1><?php echo $name ?></h1>
-                <h2>username: <?php echo $username ?></h2>
-                <h3>Date of birth: <?php echo $date_of_birth ?></h3>
-                <h3>About: </h3>
-                <a><?php echo $about ?></a>
-            </div>
-            <div id="centerdiv">
-                <div><?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $user['photo'] ).'"/>'; ?></div>
-                <form action="../actions/action_change_prof_pic.php" method="post" enctype="multipart/form-data">
-                    <br>
-                    <a>Escolher nova foto de perfil</a>
-                    <input type="file" name="fileToUpload" id="fileToUpload">
-                    <input type="submit" value="Upload Image" name="submit">
-                </form>
+            <?php draw_margin(); ?>
+            
+            <div id="photo_info">
+                <div id="leftdiv">
+                    <div><?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $user['photo'] ).'"/>'; ?></div>
+                    <form action="../actions/action_change_prof_pic.php" method="post" enctype="multipart/form-data">
+                        <br>
+                        <a>Escolher nova foto de perfil</a>
+                        <input type="file" name="fileToUpload" id="fileToUpload">
+                        <input type="submit" value="Upload Image" name="submit">
+                    </form>
+                </div>
+                <div id="info">
+                    <h1><?php echo $name ?></h1>
+                    <h2>username: <?php echo $username ?></h2>
+                    <h3>Date of birth: <?php echo $date_of_birth ?></h3>
+                    <h3>About: </h3>
+                    <a><?php echo $about ?></a>
+                </div>
             </div>
             <div id=menu>
-                <a href="edit_profile.php">Editar perfil</a>
+                <a href="../pages/edit_profile.php">Editar perfil</a>
                 <a href="change_pass.php">Alterar senha</a>
                 <a href="user_houses.php">Editar propriedades</a>
             </div>

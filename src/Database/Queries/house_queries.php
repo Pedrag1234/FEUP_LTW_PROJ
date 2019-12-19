@@ -92,4 +92,26 @@
 		return $stmt->fetchAll();
 	}
 
+	function searchHouses($description, $local, $n_guests){
+		
+		global $dbh;
+
+		$stmt = $dbh->prepare('SELECT * FROM house ORDER BY classificacao DESC LIMIT 20');
+		$stmt->execute();
+		$allHouses = $stmt->fetchAll();
+
+		$matches = [];
+		$description = preg_replace("/ /", "|", $description);
+		preg_replace("/ /", "|", $local);
+		
+		foreach ($allHouses as $house) {
+			if (preg_match('/'.$description.'/', $house['title']) || preg_match('/'.$description.'/', $house['description']))
+				if ($n_guests <= $house['max_guests'])
+					array_push($matches,$house);
+
+		}
+
+		return $matches;
+
+	}
 ?>

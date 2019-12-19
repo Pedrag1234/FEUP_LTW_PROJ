@@ -30,7 +30,6 @@
             $id = createHouse($title,$rent,$location,$description,$area,$maxguests,$n_rooms,$n_baths,$username);
         
             if ($_FILES['housephotos']['error'][0] == 4) {
-                sleep(30);
             }
             else{
             $target_dir = "../images/";

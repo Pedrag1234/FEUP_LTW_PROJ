@@ -6,20 +6,16 @@
 function list_user_houses(){ 
 
     $username = $_SESSION['Username'];
-    $houses = getHousesByUser($username); ?>
-    
-    <?php if (empty($houses)) { ?>
+    $houses = getHousesByUser($username);
+    if (empty($houses)) { ?>
         <h2>No houses found</h2>
-    <?php add_House();
+    <?php 
     } else { 
 
-       foreach($houses as $house){ 
-            displayHouse($house);
-        } ?>
-    <?php add_House();
-} ?>
-
-<?php }
+        displayHouses($houses);
+    } 
+    add_House();
+}
 
 
 

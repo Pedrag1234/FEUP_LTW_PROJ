@@ -28,7 +28,6 @@ else{
         updateHouse($title,$rent,$location,$description,$area,$maxguests,$n_rooms,$n_baths,$house_id);
         
         if ($_FILES['housephotos']['error'][0] == 4) {
-            sleep(30);
         }
         else{
         $target_dir = "../images/";

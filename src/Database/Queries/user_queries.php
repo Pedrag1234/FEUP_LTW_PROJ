@@ -70,10 +70,10 @@
 		
 		global $dbh;
 		if (!verifyUser($username,$oldPassword)){
-			return false;
+			return "Wrong password";
 		}
 		else if ($newPassword != $confPassword) {
-			return false;
+			return "Passwords doesn't match";
 		}
 		else{
 				$options = ['cost' => 12];
@@ -81,7 +81,7 @@
 				$stmt = $dbh->prepare('UPDATE user SET password=? WHERE username = ?');
 				$stmt->execute(array($hash, $username));
 
-				return true;
+				return "ok";
 
 		}
 
