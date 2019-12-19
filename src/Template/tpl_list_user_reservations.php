@@ -12,7 +12,7 @@ function list_user_reservations(){
     <?php
     } else { 
        foreach($reservations as $reservation){ 
-            $date_reservation = getReservationDates($reservation['id_reservation'], $reservation['id_house']); ?>
+            $date_reservation = getReservationDates($reservation['id_reservation'], $reservation['id_house']); 
             displayReservation($reservation, $date_reservation);
         } 
     } 

@@ -42,6 +42,7 @@ CREATE TABLE photo
 
 CREATE TABLE availability
 (
+	id_availability INTEGER PRIMARY KEY,
 	start_date DATE,
 	end_date DATE,
 	id_house INTEGER REFERENCES house
@@ -90,7 +91,6 @@ VALUES
 		"Pedrag123",
 		"$2y$12$GJvj8.qkH4hqNsyik84yU.2jGCxNI03e4BN0Inn2InarBcV6JT0JG",
 		"Pedro Azevedo",
-		21,
 		"1998-03-10",
 		"Likes to watch movies and play video games",
 		"photo");
@@ -101,7 +101,6 @@ VALUES
 		"Ricky_Ricardo",
 		"Yeet",
 		"Ricardo Milos",
-		32,
 		"1987-10-2",
 		"Good memes",
 		"photo1");
@@ -112,7 +111,6 @@ VALUES
 		"OwenW",
 		"WOW",
 		"Owen Wilson",
-		50,
 		"1969-05-26",
 		"Oh wow",
 		"photo2");
@@ -123,7 +121,6 @@ VALUES
 		"MnM",
 		"Moms spaghetti",
 		"Eminem",
-		45,
 		"1979-07-02",
 		"Knees weak, arms heavy, there is vomit on his sweater, moms spaghetti",
 		"photo3");
@@ -239,64 +236,73 @@ VALUES(
 INSERT INTO availability
 VALUES(
 		1,
-		"2019-10-03",
-		"2019-11-03"
-	);
-
-INSERT INTO availability
-VALUES(
-		1,
 		"2019-12-03",
-		"2020-01-03"
+		"2019-12-07",
+		1
 	);
 
 INSERT INTO availability
 VALUES(
 		2,
+		"2019-12-25",
+		"2019-12-31",
+		1
+	);
+
+INSERT INTO availability
+VALUES(
+		3,
 		"2019-09-12",
-		"2019-11-12"
-	);
-
-INSERT INTO availability
-VALUES(
-		3,
-		"2020-01-10",
-		"2020-02-10"
-	);
-
-INSERT INTO availability
-VALUES(
-		3,
-		"2020-06-20",
-		"2020-08-20"
-	);
-
-INSERT INTO availability
-VALUES(
-		3,
-		"2020-11-02",
-		"2020-12-31"
+		"2019-11-12",
+		2
 	);
 
 INSERT INTO availability
 VALUES(
 		4,
-		"2019-11-12",
-		"2020-03-22"
+		"2020-01-10",
+		"2020-02-10",
+		3
 	);
 
 INSERT INTO availability
 VALUES(
 		5,
-		"2019-11-12",
-		"2020-03-22"
+		"2020-06-20",
+		"2020-08-20",
+		3
 	);
 
 INSERT INTO availability
 VALUES(
 		6,
+		"2020-11-02",
+		"2020-12-31",
+		4
+	);
+
+INSERT INTO availability
+VALUES(
+		7,
+		"2019-11-12",
+		"2020-03-22",
+		4
+	);
+
+INSERT INTO availability
+VALUES(
+		8,
+		"2019-11-12",
+		"2020-03-22",
+		5
+	);
+
+INSERT INTO availability
+VALUES(
+		9,
 		"2019-11-15",
-		"2020-06-15"
+		"2020-06-15",
+		6
 	);
 
 

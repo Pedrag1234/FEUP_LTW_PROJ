@@ -76,4 +76,20 @@
 		$stmt->execute(array($rent,$location,$title,$maxg,$desc,$area,$rooms,$baths,$id));
 	}
 
+	function getHouseAvailability($house_id){
+		global $dbh;
+
+		$stmt = $dbh->prepare('SELECT * FROM availability WHERE id_house = ?');
+		$stmt->execute(array($house_id));
+		return $stmt->fetchAll();
+	}
+
+	function getHouseNumberPeople($house_id){
+		global $dbh;
+
+		$stmt = $dbh->prepare('SELECT max_guests FROM house WHERE id_house = ?');
+		$stmt->execute(array($house_id));
+		return $stmt->fetchAll();
+	}
+
 ?>

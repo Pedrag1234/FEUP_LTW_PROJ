@@ -12,7 +12,7 @@
         draw_header_index();
     }
 
-    getReservationInfo($house_id);
+    getReservationInfo($reservation_id);
 
     
     draw_footer();

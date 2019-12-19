@@ -34,12 +34,30 @@
 		return $stmt->fetchAll();
 	}
 
-	function createReservation($title,$rent,$location,$desc,$area,$maxg,$rooms,$baths,$username){
+	function createReservation($n_guests, $payment, $username, $id_house){
 		
 		global $dbh;
 
-		$stmt = $dbh->prepare('INSERT INTO house VALUES(null,?,?,?,?,0,?,?,?,?,?)');
-		$stmt->execute(array($rent,$location,$title,$maxg,$desc,$area,$rooms,$baths,$username));
+		$stmt = $dbh->prepare('INSERT INTO reservation VALUES(null,?,?,?,?)');
+		$stmt->execute(array($n_guests, $payment, $username, $id_house));
 
+		$result = $dbh->query('SELECT last_insert_rowid() as last_insert_rowid')->fetch();
+    	return $result['last_insert_rowid'];
 	}
+
+	function createDateReservation($start_date, $end_date, $id_reservation, $id_house){
+		
+		global $dbh;
+
+		$stmt = $dbh->prepare('INSERT INTO date_reservation VALUES(?,?,?,?)');
+		$stmt->execute(array($start_date, $end_date, $id_reservation, $id_house));
+	}
+
+	function createAvailability($start_date, $end_date, $id_house){
+		global $dbh;
+
+		$stmt = $dbh->prepare('INSERT INTO availability VALUES(null,?,?,?)');
+		$stmt->execute(array($start_date, $end_date, $id_house));
+	}
+
 ?>
