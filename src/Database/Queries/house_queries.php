@@ -86,12 +86,13 @@
 
 		$matches = [];
 		$description = preg_replace("/ /", "|", $description);
-		preg_replace("/ /", "|", $local);
+		$local = preg_replace("/ /", "|", $local);
 		
 		foreach ($allHouses as $house) {
-			if (preg_match('/'.$description.'/', $house['title']) || preg_match('/'.$description.'/', $house['description']))
-				if ($n_guests <= $house['max_guests'])
-					array_push($matches,$house);
+			if (preg_match('/'.$description.'/i', $house['title']) || preg_match('/'.$description.'/i', $house['description']))
+				if (preg_match('/'.$local.'/i', $house['location']))
+					if ($n_guests <= $house['max_guests'])
+						array_push($matches,$house);
 
 		}
 

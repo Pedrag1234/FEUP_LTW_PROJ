@@ -2,8 +2,13 @@
     include_once('../Database/Queries/house_queries.php');
     include_once('../Database/Queries/user_queries.php');
     include_once('../Database/Queries/reviews_queries.php');
-
-    if (!isset($_POST['ReviewComment']) || !isset($_POST['Rating']) || !isset($_SESSION['Username'])) {
+    
+    if ($_SESSION['csrf'] != $_POST['csrf']) {
+        editProfile($_SESSION['Username'], $name, $username, $date_of_birth, $description);
+        echo "Wrong token";
+        die();
+    }
+    else if (!isset($_POST['ReviewComment']) || !isset($_POST['Rating']) || !isset($_SESSION['Username'])) {
         $id_house = $_POST['HouseId'];
         $newpage = "../pages/house.php?id_house=".$id_house;
         header('Location: '.$newpage);

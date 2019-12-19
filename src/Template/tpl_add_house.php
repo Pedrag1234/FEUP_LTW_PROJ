@@ -31,6 +31,7 @@ function add_House(){ ?>
             <label> Photos
                 <input name="housephotos[]" type="file" multiple="multiple" />
             </label>
+            <input type="hidden" name='csrf' value="<?=$_SESSION['csrf'];?>">
             <button type="submit">Add House</button>
         </form>
     </div>

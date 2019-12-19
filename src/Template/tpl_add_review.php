@@ -10,6 +10,7 @@
                 <input type="number" name="Rating">
             </label>
             <input type="hidden" name="HouseId" value="<?php echo $id_house ?>">
+            <input type="hidden" name='csrf' value="<?=$_SESSION['csrf'];?>">
             <button type="submit">Add Review</button>    
         </form>     
     <?php }
