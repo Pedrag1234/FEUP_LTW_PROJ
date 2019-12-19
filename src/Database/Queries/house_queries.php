@@ -114,4 +114,12 @@
 		return $matches;
 
 	}
+
+	function deletePhoto($id_photo){
+		global $dbh;
+
+		$stmt = $dbh->prepare('DELETE FROM photo WHERE photo_id=?');
+		$stmt->execute(array($id_photo));
+	}
+
 ?>

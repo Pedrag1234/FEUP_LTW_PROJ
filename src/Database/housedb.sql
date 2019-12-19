@@ -9,7 +9,7 @@ CREATE TABLE [user]
 	photo VARCHAR
 );
 
-CREATE TABLE wrong_login 
+CREATE TABLE wrong_login
 (
 	username VARCHAR,
 	ip_address VARCHAR,
