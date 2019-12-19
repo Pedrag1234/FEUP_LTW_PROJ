@@ -12,6 +12,7 @@
 
     if($msg == "User sucessfully created"){
         $_SESSION['Username'] = $username;
+        $_SESSION['csrf'] = bin2hex(openssl_random_pseudo_bytes(32));
         header('Location: ../index.php');
     }
     else {

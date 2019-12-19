@@ -35,6 +35,7 @@ function edit_House($house_id){
             <label> Photos
                 <input name="housephotos[]" type="file" multiple="multiple" />
             </label>
+            <input type="hidden" name='csrf' value="<?=$_SESSION['csrf'];?>">
             <button type="submit">Edit</button>
         </form>
     </div>
@@ -57,6 +58,7 @@ function removePhotos($house_id){
                     $i++;
                     } ?>
                 </select>
+                <input type="hidden" name='csrf' value="<?=$_SESSION['csrf'];?>">
                 <button type="submit">Remove photo/s</button>
             </form>
         </div>

@@ -8,7 +8,12 @@
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
     // Check if image file is a actual image or fake image
-    if(isset($_POST["submit"])) {
+    if ($_SESSION['csrf'] != $_POST['csrf']) {
+        editProfile($_SESSION['Username'], $name, $username, $date_of_birth, $description);
+        echo "Wrong token";
+        die();
+    }
+    else if(isset($_POST["submit"])) {
         $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
         if($check !== false) {
             echo "File is an image - " . $check["mime"] . ".";

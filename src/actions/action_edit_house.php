@@ -1,7 +1,13 @@
 <?php
   include_once('../Database/Queries/house_queries.php');
 
-if (isset($_POST['Title']) == false || isset($_POST['Rent']) == false || isset($_POST['Location']) == false
+
+if ($_SESSION['csrf'] != $_POST['csrf']) {
+    editProfile($_SESSION['Username'], $name, $username, $date_of_birth, $description);
+    echo "Wrong token";
+    die();
+}
+else if (isset($_POST['Title']) == false || isset($_POST['Rent']) == false || isset($_POST['Location']) == false
      || isset($_POST['Description']) == false || isset($_POST['Area']) == false || isset($_POST['MaxGuests']) == false
      || isset($_POST['Nofrooms']) == false || isset( $_POST['NofBathrooms']) == false || isset($_POST['id_house']) == false) {
      
