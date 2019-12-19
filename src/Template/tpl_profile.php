@@ -31,7 +31,7 @@
                 </div>
             </div>
             <div id=menu>
-                <a href="edit_profile.php">Editar perfil</a>
+                <a href="../pages/edit_profile.php">Editar perfil</a>
                 <a href="change_pass.php">Alterar senha</a>
                 <a href="user_houses.php">Editar propriedades</a>
             </div>
