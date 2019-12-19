@@ -5,7 +5,7 @@ include('../Template/tpl_picture_slider.php');
 
 function getHouseInfo($id){
     $house = getHouse($id); ?>
-    
+
     <div class="padding">
         <div id="house">
             <h1><?php echo $house['title']; ?></h1>
@@ -21,18 +21,6 @@ function getHouseInfo($id){
                 <?php } ?>
             </div>
         </div>
-        <div id="house">
-            <h1><?php echo $house['title']; ?></h1>
-            <?php pic_slider($id); ?>
-            <a><?php echo $house['description']; ?></a>
-            <br><br>
-            <a><?php echo $house['location']; ?></a>
-            <a><?php echo $house['rent']; ?></a>
-            <?php drawStarsHouse($house['classificacao']);?>
-            <?php if(isset($_SESSION['Username']) == true && $_SESSION['Username'] == $house['id_owner']){?>
-                <a href="edit_house.php?id_house=<?php echo $house['id_house']?>">Edit House Info</a>
-            <?php } ?>    
-        </div> 
         <div>
             <?php 
             $availabilities = getHouseAvailability($id);
@@ -43,7 +31,7 @@ function getHouseInfo($id){
 
             $stringDates="";
             foreach($availabilities as $range){
-                
+
                 $dateUnavailable = date_range($range['start_date'], $range['end_date']);
 
                 foreach($dateUnavailable as $date){
@@ -54,7 +42,7 @@ function getHouseInfo($id){
             ?>  
 
             <input type="hidden" value="<?php echo $stringDates; ?>" id="stringDates" />       
-            
+
             <script>
                 $(function() {
                     var stringDates = $("input#stringDates").val();
@@ -104,7 +92,8 @@ function getHouseInfo($id){
                 <input type="number" name="numeroHospedes" min="0" max="<?php echo $numberGuests['max_guests'] ?>">
                 <button type="submit">Reserve</button>
             </form>
-        </div> 
+        </div>
+    </div> 
 
     <?php }
 
@@ -116,8 +105,22 @@ function getHouseInfo($id){
         for ($j=0; $j < $no_stars; $j++) { 
             echo '<span class="fa fa-star"></span>';
         }
-    }?>
+    }
 
-</div>
-<?php }
+    function date_range($first, $last, $step = '+1 day', $output_format = 'd-m-y' ) {
+
+    $dates = array();
+    $current = strtotime($first);
+    $last = strtotime($last);
+
+    while( $current <= $last ) {
+
+        $dates[] = date($output_format, $current);
+        $current = strtotime($step, $current);
+    }
+
+    return $dates;
+
+}?>
+
 ?>

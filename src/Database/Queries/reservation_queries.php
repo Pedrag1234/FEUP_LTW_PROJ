@@ -60,4 +60,25 @@
 		$stmt->execute(array($start_date, $end_date, $id_house));
 	}
 
+	function deleteReservation($id_reservation){
+		global $dbh;
+
+		$stmt = $dbh->prepare('DELETE FROM reservation WHERE id_reservation = ?');
+		$stmt->execute(array($id_reservation));
+	}
+
+	function deleteDateReservation($id_reservation, $id_house){
+		global $dbh;
+
+		$stmt = $dbh->prepare('DELETE FROM date_reservation WHERE id_reservation = ? AND id_house = ?');
+		$stmt->execute(array($id_reservation, $id_house));
+	}
+
+	function deleteAvailability($id_house, $start_date, $end_date){
+		global $dbh;
+
+		$stmt = $dbh->prepare('DELETE FROM availability WHERE id_house = ? AND start_date = ? AND end_date = ?');
+		$stmt->execute(array($id_house, $start_date, $end_date));
+	}
+
 ?>
