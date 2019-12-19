@@ -23,6 +23,7 @@
             $i++;
         }
         $currentRating = $currentRating/$i;
+        $currentRating = intval($currentRating);
         
         $stmt2 = $dbh->prepare('UPDATE house SET classificacao=? WHERE id_house=?');
         $stmt2->execute(array($currentRating,$id_house));

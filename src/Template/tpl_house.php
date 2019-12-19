@@ -12,7 +12,7 @@
             <br><br>
             <a><?php echo $house['location']; ?></a>
             <a><?php echo $house['rent']; ?></a>
-            <a><?php echo $house['classificacao']; ?></a>
+            <?php drawStarsHouse($house['classificacao']);?>
             <?php if(isset($_SESSION['Username']) == true && $_SESSION['Username'] == $house['id_owner']){?>
                 <a href="edit_house.php?id_house=<?php echo $house['id_house']?>">Edit House Info</a>
             <?php } ?>    
@@ -20,4 +20,14 @@
         
 
      <?php }
+
+function drawStarsHouse($rating){
+    for ($i=0; $i < $rating; $i++) { 
+        echo '<span class="fa fa-star checked"></span>';
+    }
+    $no_stars = 5 - $rating;
+    for ($j=0; $j < $no_stars; $j++) { 
+        echo '<span class="fa fa-star"></span>';
+    }
+}
 ?>

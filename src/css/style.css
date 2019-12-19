@@ -118,11 +118,11 @@ h2 {
   height: 725px;
 }
 #ChangeProf > * {
-	text-align: left;
-	padding: 1em;
+  text-align: left;
+  padding: 1em;
   float: left;
 }
-#error{
+#error {
   color: red;
   text-align: center;
   row-gap: 2em;
@@ -254,4 +254,11 @@ h2 {
 }
 #AddHouseForm textarea {
   width: 200px;
+}
+
+#review {
+  background-color: cornflowerblue;
+  padding: 13px;
+  margin: 10px;
+  border-radius: 10px;
 }

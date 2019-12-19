@@ -19,14 +19,27 @@
     function drawReview($review){
         $user = getUser($review['id_user']); ?>
             <div id="review">
+                <style>
+                    .checked {
+                        color: orange;
+                    }
+                </style>
                 <h3><?php echo $review['review_c'] ?></h3>
-                <p><?php echo $review['rating'] ?> </p> 
+                <?php drawStars($review); ?> 
                 <p> <?php echo $review['id_user'] ?><p>
             </div>
        <?php 
     }
 
-
+    function drawStars($review){
+        for ($i=0; $i < $review['rating']; $i++) { 
+            echo '<span class="fa fa-star checked"></span>';
+        }
+        $no_stars = 5 - $review['rating'];
+        for ($j=0; $j < $no_stars; $j++) { 
+            echo '<span class="fa fa-star"></span>';
+        }
+    }
 
 
 
