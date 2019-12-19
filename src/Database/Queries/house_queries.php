@@ -46,7 +46,7 @@
 		
 		global $dbh;
 
-		$stmt = $dbh->prepare('INSERT INTO house VALUES(null,?,?,?,?,0,?,?,?,?,?)');
+		$stmt = $dbh->prepare('INSERT INTO house VALUES(null,?,?,?,?,1,?,?,?,?,?)');
 		$stmt->execute(array($rent,$location,$title,$maxg,$desc,$area,$rooms,$baths,$username));
 		
 		$result = $dbh->query('SELECT last_insert_rowid() as last_insert_rowid')->fetch();
@@ -75,29 +75,5 @@
 		$stmt = $dbh->prepare('UPDATE house SET rent=?, location=?, title=?, max_guests=?, description=?, area=?, quartos=?, casas_de_banho=? WHERE id_house=?');
 		$stmt->execute(array($rent,$location,$title,$maxg,$desc,$area,$rooms,$baths,$id));
 	}
-
-	function searchHouses($description, $local, $n_guests){
-		
-		global $dbh;
-
-		$stmt = $dbh->prepare('SELECT * FROM house ORDER BY classificacao DESC LIMIT 20');
-		$stmt->execute();
-		$allHouses = $stmt->fetchAll();
-
-		$matches = [];
-		$description = preg_replace("/ /", "|", $description);
-		preg_replace("/ /", "|", $local);
-		
-		foreach ($allHouses as $house) {
-			if (preg_match('/'.$description.'/', $house['title']) || preg_match('/'.$description.'/', $house['description']))
-				if ($n_guests <= $house['max_guests'])
-					array_push($matches,$house);
-
-		}
-
-		return $matches;
-
-	}
-
 
 ?>
