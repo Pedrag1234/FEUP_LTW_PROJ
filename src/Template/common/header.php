@@ -11,9 +11,10 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link href="../css/style.css" rel="stylesheet">
             <link href="../css/layout.css" rel="stylesheet">
-             <link rel="stylesheet" href="../jquery/jquery-ui.css" />
-            <script src="../jquery/jquery-1.8.2.js"></script>
-            <script src="../jquery/jquery-ui.js"></script>
+            <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+            <link rel="stylesheet" href="/resources/demos/style.css">
+            <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         </head>
         <?php
         draw_margin();
