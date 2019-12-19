@@ -9,7 +9,7 @@ CREATE TABLE [user]
 	photo VARCHAR
 );
 
-CREATE TABLE wrong_login
+CREATE TABLE wrong_login 
 (
 	username VARCHAR,
 	ip_address VARCHAR,
@@ -135,7 +135,7 @@ VALUES(
 		1,
 		200,
 		"Portugal" ,
-		"Uma casa á beira do mar" ,
+		"Uma casa à beira do mar" ,
 		3 ,
 		5 ,
 		"Dá para pescar peixes" ,
@@ -150,7 +150,7 @@ VALUES(
 		2,
 		300,
 		"Portugal" ,
-		"Uma casa á beira do rio" ,
+		"Uma casa à beira do rio" ,
 		3 ,
 		5 ,
 		"Dá para lavar a roupa",
@@ -165,7 +165,7 @@ VALUES(
 		3,
 		400,
 		"Portugal" ,
-		"Uma casa á beira das docas" ,
+		"Uma casa à beira das docas" ,
 		2 ,
 		4 ,
 		"Dá para ser roubado por gaivotas" ,
@@ -180,7 +180,7 @@ VALUES(
 		4,
 		400,
 		"Portugal" ,
-		"Uma casa á beira da montanha" ,
+		"Uma casa à beira da montanha" ,
 		4 ,
 		4 ,
 		"Dá para rolar abaixo da montanha mas não é aconselhado",
@@ -195,7 +195,7 @@ VALUES(
 		5,
 		500,
 		"Portugal" ,
-		"Uma casa á beira do MCDonalds" ,
+		"Uma casa à beira do MCDonalds" ,
 		1 ,
 		4 ,
 		"Comida barata i guess",
@@ -210,7 +210,7 @@ VALUES(
 		6,
 		600,
 		"Portugal" ,
-		"Uma casa á beira da lixeira" ,
+		"Uma casa à beira da lixeira" ,
 		3,
 		3 ,
 		"Where u belong",
@@ -225,7 +225,7 @@ VALUES(
 		7,
 		700,
 		"Portugal" ,
-		"Uma casa á beira de um vulcão" ,
+		"Uma casa à beira de um vulcão" ,
 		6 ,
 		3 ,
 		"Dá jeito para sacrificar virgens",

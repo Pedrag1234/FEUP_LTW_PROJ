@@ -2,7 +2,6 @@
     include('../Template/common/header.php');
     include('../Template/common/footer.php');
     include('../Template/tpl_house.php');
-    include('../Template/tpl_add_review.php');
     include('../Template/tpl_review.php');
     //include('../Template/tpl_picture_slider.php');
 
@@ -18,7 +17,6 @@
     //pic_slider($house_id);
     getHouseInfo($house_id);
     drawReviews($house_id);
-    drawAddReview($house_id);
     
 
     draw_footer();

@@ -1,27 +1,14 @@
-
-#RegisterForm > form {
-	margin: 1em;
+header{
+	display:grid;
+	width: 100%;
+	max-width: 1915px;
+	margin-left: auto;
+	margin-right: auto;
 }
-
-#LoginForm > form {
-	margin: 1em;
-}
-
-#LoginForm > form > * {
-	display: block;
-	text-align: center;
-	padding: 0.5em;
-}
-
-#RegisterForm > form > * {
-	display: block;
-	text-align: center;
-	padding: 0.5em;
-}
-
 body{
 	display:grid;
-	width: 60em;
+	width: 100%;
+	max-width: 1915px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -39,11 +26,17 @@ body{
 }
 
 #topNavBar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10;
 	display:grid;
-	width: 60em;
+	width: 100vw;
+	max-width: 1920px;
 	margin-left: auto;
 	margin-right: auto;
 }
+
 
 #topNavBar > h1{
 	grid-column-start: 1;
@@ -61,4 +54,115 @@ body{
 	grid-column-end: 8; 
 	grid-row-start: 1;
 	grid-row-end: 1;
+}
+
+@media only screen and (min-width: 1400px) {  
+	#houseRow {
+		column-count: 2;
+	}
+	#house {
+		max-height: 23vw;
+		max-width: 50vw;
+	}
+	#house img {
+		max-height: 17vw;
+		max-width: 50vw;
+	}
+	#emptyColumn{
+		min-height: 25vw;
+	}
+}
+@media only screen and (max-width: 1400px) {
+	#houseRow {
+		display: grid;
+		row-gap: 1em;
+	}
+}
+@media only screen and (min-width: 400px) {
+	
+}
+
+#Profile > #menu {
+	padding: 20px;
+	background-color: gray;
+}
+
+#Profile #leftdiv {
+	position: relative;
+	left: 0;
+	padding: 20px;
+}
+
+#Profile #leftdiv a {
+	font-weight: bold;
+	width: 400px;
+}
+
+#Profile > #menu {
+	width: 20em;
+	z-index: 9;
+}
+
+
+#Profile #leftdiv {
+	width: 400px;
+}	
+#Profile #leftdiv img {
+	width: 300px;
+}
+#Profile > #menu {
+	width: 20em;
+	position: fixed;
+	right: 0;
+	z-index: 9;
+	height: 90vh;
+}
+
+@media only screen and (min-height: 900px) {
+	#Profile{
+		position: fixed;
+		height: 100vh;
+	}
+}
+@media only screen and (max-height: 900px) {
+	#Profile {
+		min-height: 900px;
+	}
+}
+
+@media only screen and (min-width: 1150px) {
+	#Profile #photo_info {
+		top: 7em;
+		left: 0px;
+		min-width: 350px;
+		text-align: left;
+		column-count: 2;
+		column-width: auto;
+	}
+	#Profile #photo_info #info {
+		margin-left: -10em;
+		position: relative;
+		height: 90vh;
+	}
+	#Profile #photo_info #leftdiv {
+		position: relative;
+		height: 90vh;
+	}
+}
+@media only screen and (max-width: 1150px) {
+	#Profile #photo_info {
+		position: absolute;
+		top: 7em;
+		left: 0px;
+		min-width: 350px;
+		text-align: left;
+	}
+	
+	#Profile #photo_info #leftdiv {
+		position: relative;
+	}
+	#Profile #photo_info #info {
+		position: relative;
+		margin-top: 7em;
+	}
 }
