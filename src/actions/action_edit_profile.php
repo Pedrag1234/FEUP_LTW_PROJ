@@ -20,6 +20,7 @@
         echo $username;
         echo $description;
         echo $date_of_birth;
+        header('Location: ../pages/edit_profile.php?error="Preencha todos os campos"');
     }
     die();
 ?>

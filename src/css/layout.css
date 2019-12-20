@@ -28,26 +28,9 @@ body{
 	top: 0;
 	z-index: 10;
 	display:grid;
-	margin-left: auto;
-	margin-right: auto;
-}
-@media only screen and (min-width: 1920px) {
-	#searchDiv{
-		left: 0;
-		width: 100vw;
-	}
-	#topNavBar {
-		left: 0;
-		width: 100vw;
-	}
-
-}
-
-@media only screen and (max-width: 1920px) {	
-	#topNavBar {
-		width: 100vw;
-		left: 0;
-	}
+	margin-left: 0;
+	margin-right: 0;
+	left: 0;
 }
 
 
@@ -123,13 +106,30 @@ body{
 #Profile #leftdiv img {
 	width: 300px;
 }
-#Profile > #menu {
-	width: 20em;
-	position: fixed;
-	right: 0;
-	z-index: 9;
-	height: 90vh;
+
+@media only screen and (min-width: 700px) {
+	#Profile > #menu {
+		width: 20em;
+		position: fixed;
+		right: 0;
+		z-index: 9;
+		height: 90vh;
+	}
 }
+@media only screen and (max-width: 700px) {
+	#Profile > #menu {
+		max-width: 500px;
+		min-width: 100vw;
+		height: 550px;
+		position: relative;
+		top: 40em;
+		bottom: 0;
+		z-index: 9;
+		overflow: scroll;
+	}
+
+}
+
 
 @media only screen and (min-height: 900px) {
 	#Profile{
@@ -139,7 +139,9 @@ body{
 }
 @media only screen and (max-height: 900px) {
 	#Profile {
-		min-height: 900px;
+		position: fixed;
+		height: 900px;
+		overflow: scroll;
 	}
 }
 
@@ -176,6 +178,7 @@ body{
 	}
 	#Profile #photo_info #info {
 		position: relative;
-		margin-top: 7em;
+		margin-top: 0em;
+		height: 700px;
 	}
 }

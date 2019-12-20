@@ -11,7 +11,6 @@
         ?>
         <div id="Profile">
             <?php draw_margin(); ?>
-            
             <div id="photo_info">
                 <div id="leftdiv">
                     <div><?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $user['photo'] ).'"/>'; ?></div>

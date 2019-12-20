@@ -4,6 +4,10 @@
   word-break: break-word;
 }
 
+a{
+  z-index: 11;
+}
+
 body {
   margin: 0em;
   margin: 0px;
@@ -39,7 +43,7 @@ body {
 }
 @media only screen and (min-width: 620px) {
   #topNavBar {
-    max-height: 5.5em;
+    height: 5.5em;
   }
   #Profile > #menu {
     top: 5.5em;
@@ -224,16 +228,20 @@ body {
   height: 100vh;
   position: fixed;
   left: 0;
-  top: 4.9em;
+  top: 0em;
   z-index: -10;
 }
-
+#ChangeProf form {
+  position: relative;
+	text-align: left;
+  padding: 1em;
+  margin-top: 0em;
+  height: 700px;
+}
 
 #Profile > * {
   padding: 20px;
 }
-
-
 
 #Profile > #menu > a {
   width: 100%;
@@ -242,11 +250,6 @@ body {
   display: inline-block;
   font-weight: bold;
   font-size: 32px;
-}
-
-#ChangeProf > * {
-	text-align: left;
-	padding: 1em;
 }
 #error {
   margin-top: 7em;
@@ -385,9 +388,34 @@ body {
 
 #reservation_display {
   border: 1em;
-  color: white;
   background-color: gray;
   border-radius: 15px;
   padding: 15px;
   margin: 3px;
+}
+#reservation_display * {
+  color: white;
+}
+
+#reservation_display label {
+  font-size: 30px;
+}
+#reservation_display > a {
+  font-size: 30px;
+  margin-right: 1em;
+}
+
+#reservation {
+  border: 1em;
+  background-color: gray;
+  border-radius: 15px;
+  padding: 15px;
+  margin: 3px;
+}
+#reservation * {
+  color: white;
+}
+#reservation > a {
+  font-size: 24px;
+  margin-right: 1em;
 }
