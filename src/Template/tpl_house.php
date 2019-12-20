@@ -50,7 +50,7 @@ function getHouseInfo($id){
                     var oneYearFromNow = new Date();
                     oneYearFromNow.setFullYear(oneYearFromNow.getFullYear() + 1);
                     $( "#calendario" ).datepicker({
-                        dateFormat: "d-m-y",
+                        dateFormat: "dd-mm-yy",
                         minDate: new Date(),
                         maxDate: oneYearFromNow,
                         onSelect: function(dateStr) {
@@ -59,7 +59,7 @@ function getHouseInfo($id){
                     },
                     currentText: new Date(),
                     beforeShowDay: function(date){
-                        var string = jQuery.datepicker.formatDate('dd-mm-y', date);
+                        var string = jQuery.datepicker.formatDate('dd-mm-yy', date);
                         if($.inArray(string, dates)!=-1){
                             return[false];
                         }else{
@@ -68,11 +68,11 @@ function getHouseInfo($id){
                     }
                 });
                     $( "#calendario2" ).datepicker({
-                        dateFormat: "d-m-y",
+                        dateFormat: "dd-mm-yy",
                         maxDate: oneYearFromNow,
                         currentText: new Date(),
                         beforeShowDay: function(date){
-                            var string = jQuery.datepicker.formatDate('dd-mm-y', date);
+                            var string = jQuery.datepicker.formatDate('dd-mm-yy', date);
                             if($.inArray(string, dates)!=-1){
                                 return[false];
                             }else{
@@ -89,7 +89,7 @@ function getHouseInfo($id){
                 <input type="text" class="datePick" id="calendario2" name="end_date"/>
                 <input type="hidden" value="<?php echo $id; ?>" name="id_house" />
                 <input type="hidden" value="<?php echo $house['rent']; ?>" name="rent" />
-                <input type="number" name="numeroHospedes" min="0" max="<?php echo $numberGuests['max_guests'] ?>">
+                <input type="number" name="numeroHospedes" min="1" max="<?php echo $numberGuests['max_guests'] ?>">
                 <button type="submit">Reserve</button>
             </form>
         </div>
@@ -107,7 +107,7 @@ function getHouseInfo($id){
         }
     }
 
-    function date_range($first, $last, $step = '+1 day', $output_format = 'd-m-y' ) {
+    function date_range($first, $last, $step = '+1 day', $output_format = 'd-m-Y' ) {
 
     $dates = array();
     $current = strtotime($first);
