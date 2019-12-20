@@ -28,6 +28,12 @@
         $stmt2->execute(array($currentRating,$id_house));
     }
 
+    function deleteReview($id_review){
+        global $dbh;
+        $stmt = $dbh->prepare('DELETE FROM review WHERE id_review = ?');
+        $stmt->execute(array($id_review));
+    }
+
     function getReviewsbyUserandHouse($id_house,$username){
         global $dbh;
         $stmt = $dbh->prepare('SELECT * FROM review WHERE id_house=? AND id_user=?');

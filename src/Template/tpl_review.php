@@ -2,7 +2,7 @@
     include_once('../Database/Queries/reviews_queries.php');
     include_once('../Database/Queries/user_queries.php');
 
-    function drawReviews($id_house){
+    function drawReviews($id_house,$user){
         $reviews = getReviews($id_house);
 
         if (empty($reviews)) {
@@ -11,12 +11,12 @@
         else{
             //print_r($reviews);
             foreach($reviews as $review){
-                drawReview($review);
+                drawReview($review,$user);
             }
         }
     }
 
-    function drawReview($review){
+    function drawReview($review,$user){
         $user = getUser($review['id_user']); ?>
             <div id="review">
                 <style>
@@ -27,6 +27,11 @@
                 <h3><?php echo $review['review_c'] ?></h3>
                 <?php drawStars($review); ?> 
                 <p> <?php echo $review['id_user'] ?><p>
+                <?php 
+                if ($review['id_user'] == $user) { 
+                  echo '<a href="../actions/action_delete_review.php?house_id='.$id_house.'&review_id='.$review['id_review'].'">Delete Review</a>';
+                }
+                ?>
             </div>
        <?php 
     }
