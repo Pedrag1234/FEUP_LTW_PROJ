@@ -305,4 +305,30 @@ VALUES(
 		6
 	);
 
+---------------------------------------------------------------------------Reviews--------------------------------------------------
+INSERT INTO review
+VALUES(
+		1,
+		3,
+		"Could have been better",
+		4,
+		"Pedrag123"
+);
 
+INSERT INTO review
+VALUES(
+		2,
+		4,
+		"Good house for the price",
+		1,
+		"MnM"
+);
+
+INSERT INTO review
+VALUES(
+		3,
+		5,
+		"Amazing 5/5",
+		1,
+		"Ricky_Ricardo"
+);
