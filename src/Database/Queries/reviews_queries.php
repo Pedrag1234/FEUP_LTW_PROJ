@@ -28,5 +28,12 @@
         $stmt2->execute(array($currentRating,$id_house));
     }
 
+    function getReviewsbyUserandHouse($id_house,$username){
+        global $dbh;
+        $stmt = $dbh->prepare('SELECT * FROM review WHERE id_house=? AND id_user=?');
+        $stmt->execute(array($id_house,$username));
+        return $stmt->fetchAll();
+    }
+
 
 ?>
