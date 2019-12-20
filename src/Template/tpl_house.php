@@ -7,7 +7,7 @@ function getHouseInfo($id){
     $house = getHouse($id); ?>
 
     <div class="padding">
-        <div id="house">
+        <div id="houseAv">
             <h1><?php echo $house['title']; ?></h1>
             <div id="photo_info">
                 <?php pic_slider($id); ?><br>
