@@ -1,5 +1,6 @@
 * {
-  font-family: 'Univers', 'Futura', 'New Century Schoolbook', 'TeX Gyre Schola', 'Avantgarde', 'TeX Gyre Adventor', 'URW Gothic L', Arial, sans-serif;
+  font-family: "Univers", "Futura", "New Century Schoolbook", "TeX Gyre Schola",
+    "Avantgarde", "TeX Gyre Adventor", "URW Gothic L", Arial, sans-serif;
   text-decoration: none;
   word-break: break-word;
 }
@@ -43,7 +44,7 @@ body {
   }
   #Profile > #menu {
     top: 5.5em;
-  }  
+  }
   #topNavBar h1 * {
     font-size: 40px;
   }
@@ -167,8 +168,8 @@ body {
   font-size: 20px;
 }
 #LoginForm > form > * {
-	text-align: left;
-	margin-left: 0.5em;
+  text-align: left;
+  margin-left: 0.5em;
   margin-bottom: 2em;
 }
 #RegisterForm {
@@ -191,7 +192,7 @@ body {
   font-size: 20px;
 }
 #RegisterForm > form > * {
-	text-align: left;
+  text-align: left;
   margin-left: 0.5em;
 }
 #regLabels {
@@ -228,12 +229,9 @@ body {
   z-index: -10;
 }
 
-
 #Profile > * {
   padding: 20px;
 }
-
-
 
 #Profile > #menu > a {
   width: 100%;
@@ -245,8 +243,8 @@ body {
 }
 
 #ChangeProf > * {
-	text-align: left;
-	padding: 1em;
+  text-align: left;
+  padding: 1em;
 }
 #error {
   margin-top: 7em;
@@ -390,4 +388,11 @@ body {
   border-radius: 15px;
   padding: 15px;
   margin: 3px;
+}
+
+#review {
+  background-color: lightblue;
+  border-radius: 15px;
+  margin-top: 5px;
+  padding-left: 10px;
 }
