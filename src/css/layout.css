@@ -2,15 +2,12 @@ header{
 	display:grid;
 	width: 100%;
 	max-width: 1915px;
-	margin-left: auto;
+	margin-left: 0;
 	margin-right: auto;
 }
 body{
 	display:grid;
 	width: 100%;
-	max-width: 1915px;
-	margin-left: auto;
-	margin-right: auto;
 }
 
 .container {
@@ -26,15 +23,31 @@ body{
 }
 
 #topNavBar {
+	width: 100vw;
 	position: fixed;
 	top: 0;
-	left: 0;
 	z-index: 10;
 	display:grid;
-	width: 100vw;
-	max-width: 1920px;
 	margin-left: auto;
 	margin-right: auto;
+}
+@media only screen and (min-width: 1920px) {
+	#searchDiv{
+		left: 0;
+		width: 100vw;
+	}
+	#topNavBar {
+		left: 0;
+		width: 100vw;
+	}
+
+}
+
+@media only screen and (max-width: 1920px) {	
+	#topNavBar {
+		width: 100vw;
+		left: 0;
+	}
 }
 
 
@@ -61,7 +74,7 @@ body{
 		column-count: 2;
 	}
 	#house {
-		max-height: 23vw;
+		height: 23vw;
 		max-width: 50vw;
 	}
 	#house img {

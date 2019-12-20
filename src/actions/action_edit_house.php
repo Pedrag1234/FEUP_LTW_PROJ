@@ -1,5 +1,6 @@
 <?php
   include_once('../Database/Queries/house_queries.php');
+  include_once('input.php');
 
 
 if ($_SESSION['csrf'] != $_POST['csrf']) {
@@ -16,20 +17,21 @@ else if (isset($_POST['Title']) == false || isset($_POST['Rent']) == false || is
     
 }
 else{
-        $title = $_POST['Title'];
-        $rent = $_POST['Rent'];
-        $location  = $_POST['Location'];
-        $description = $_POST['Description'];
-        $area = $_POST['Area'];
-        $maxguests = $_POST['MaxGuests'];
-        $n_rooms = $_POST['Nofrooms'];
-        $n_baths = $_POST['NofBathrooms'];
-        $house_id = $_POST['id_house'];
+    $title = validateInput($_POST['Title']);
+    $rent = $_POST['Rent'];
+    $location  = validateInput($_POST['Location']);
+    $description = validateInput($_POST['Description']);
+    $area = $_POST['Area'];
+    $maxguests = $_POST['MaxGuests'];
+    $n_rooms = $_POST['Nofrooms'];
+    $n_baths = $_POST['NofBathrooms'];
 
-        if (!preg_match("/^[0-9a-zA-Z\s]+$/",$title) || !preg_match("/^[0-9a-zA-Z\s]+$/",$location) || !preg_match("/^[0-9a-zA-Z\s]+$/",$description)) {
+    $username = $_SESSION['Username'];
+
+       /* if (!preg_match("/^[0-9a-zA-Z\s]+$/",$title) || !preg_match("/^[0-9a-zA-Z\s]+$/",$location) || !preg_match("/^[0-9a-zA-Z\s]+$/",$description)) {
             header('Location: ../pages/user_houses.php');
             die();
-        }
+        }*/
 
         updateHouse($title,$rent,$location,$description,$area,$maxguests,$n_rooms,$n_baths,$house_id);
         
