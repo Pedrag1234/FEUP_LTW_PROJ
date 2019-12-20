@@ -396,3 +396,19 @@ body {
   margin-top: 5px;
   padding-left: 10px;
 }
+
+#availabilityCheck {
+  border: 1em;
+  color: white;
+  background-color: gray;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+#availabilityCheck > h2{
+  color: white;
+}
+
+#availabilityCheck > label{
+  color:white;
+}

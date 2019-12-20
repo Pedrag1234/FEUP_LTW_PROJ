@@ -20,8 +20,8 @@ function getHouseInfo($id){
                     <a href="edit_house.php?id_house=<?php echo $house['id_house']?>">Edit House Info</a>
                 <?php } ?>
             </div>
-        </div>
-        <div>
+        
+        <div id="availabilityCheck">
             <?php 
             $availabilities = getHouseAvailability($id);
 
@@ -85,13 +85,17 @@ function getHouseInfo($id){
             </script>    
             <h2><?php echo "Check Availablity"?> </h2>
             <form id="reservationForm" action="../actions/action_add_reservation.php" method="post">
-                <input type="text" class="datePick" id="calendario" name="start_date"/>
-                <input type="text" class="datePick" id="calendario2" name="end_date"/>
+                <label>Check-in:</label>
+                <input type="text" class="datePick" id="calendario" name="start_date" required />
+                <label>Check-out:</label>
+                <input type="text" class="datePick" id="calendario2" name="end_date" required/>
                 <input type="hidden" value="<?php echo $id; ?>" name="id_house" />
                 <input type="hidden" value="<?php echo $house['rent']; ?>" name="rent" />
-                <input type="number" name="numeroHospedes" min="1" max="<?php echo $numberGuests['max_guests'] ?>">
+                <label>Hospedes:</label>
+                <input type="number" name="numeroHospedes" min="1" max="<?php echo $numberGuests['max_guests'] ?>" required/>
                 <button type="submit">Reserve</button>
             </form>
+        </div>
         </div>
     </div> 
 
@@ -118,7 +122,6 @@ function getHouseInfo($id){
         $dates[] = date($output_format, $current);
         $current = strtotime($step, $current);
     }
-
     return $dates;
 
 }?>
