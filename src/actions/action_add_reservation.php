@@ -7,13 +7,18 @@
     $rent = $_POST['rent'];
     $n_guests = $_POST['numeroHospedes'];
 
-    $datediff = ((strtotime($end_date) - strtotime($start_date))/(60*60*24));
+
+    $startTimeStamp = strtotime($start_date);
+    $endTimeStamp = strtotime($end);
+
+    $datediff = (abs($endTimeStamp - $startTimeStamp))/86400;
+    $nDays = intval($datediff);
     $payment = $rent * $datediff;
 
 
     $username = $_SESSION['Username'];
 
-    $new_reservation = createReservation($n_guests, $payment, $username, $id_house);
+    $new_reservation = createReservation($n_guests, $nDays, $username, $id_house);
 
     createDateReservation($start_date, $end_date, $new_reservation, $id_house);
 
