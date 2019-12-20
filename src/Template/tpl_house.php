@@ -20,8 +20,8 @@ function getHouseInfo($id){
                     <a href="edit_house.php?id_house=<?php echo $house['id_house']?>">Edit House Info</a>
                 <?php } ?>
             </div>
-        </div>
-        <div>
+        
+        <div id="availabilityCheck">
             <?php 
             $availabilities = getHouseAvailability($id);
 
@@ -50,7 +50,7 @@ function getHouseInfo($id){
                     var oneYearFromNow = new Date();
                     oneYearFromNow.setFullYear(oneYearFromNow.getFullYear() + 1);
                     $( "#calendario" ).datepicker({
-                        dateFormat: "d-m-y",
+                        dateFormat: "dd-mm-yy",
                         minDate: new Date(),
                         maxDate: oneYearFromNow,
                         onSelect: function(dateStr) {
@@ -59,7 +59,7 @@ function getHouseInfo($id){
                     },
                     currentText: new Date(),
                     beforeShowDay: function(date){
-                        var string = jQuery.datepicker.formatDate('dd-mm-y', date);
+                        var string = jQuery.datepicker.formatDate('dd-mm-yy', date);
                         if($.inArray(string, dates)!=-1){
                             return[false];
                         }else{
@@ -68,11 +68,11 @@ function getHouseInfo($id){
                     }
                 });
                     $( "#calendario2" ).datepicker({
-                        dateFormat: "d-m-y",
+                        dateFormat: "dd-mm-yy",
                         maxDate: oneYearFromNow,
                         currentText: new Date(),
                         beforeShowDay: function(date){
-                            var string = jQuery.datepicker.formatDate('dd-mm-y', date);
+                            var string = jQuery.datepicker.formatDate('dd-mm-yy', date);
                             if($.inArray(string, dates)!=-1){
                                 return[false];
                             }else{
@@ -85,13 +85,17 @@ function getHouseInfo($id){
             </script>    
             <h2><?php echo "Check Availablity"?> </h2>
             <form id="reservationForm" action="../actions/action_add_reservation.php" method="post">
-                <input type="text" class="datePick" id="calendario" name="start_date"/>
-                <input type="text" class="datePick" id="calendario2" name="end_date"/>
+                <label>Check-in:</label>
+                <input type="text" class="datePick" id="calendario" name="start_date" required />
+                <label>Check-out:</label>
+                <input type="text" class="datePick" id="calendario2" name="end_date" required/>
                 <input type="hidden" value="<?php echo $id; ?>" name="id_house" />
                 <input type="hidden" value="<?php echo $house['rent']; ?>" name="rent" />
-                <input type="number" name="numeroHospedes" min="0" max="<?php echo $numberGuests['max_guests'] ?>">
+                <label>Hospedes:</label>
+                <input type="number" name="numeroHospedes" min="1" max="<?php echo $numberGuests['max_guests'] ?>" required/>
                 <button type="submit">Reserve</button>
             </form>
+        </div>
         </div>
     </div> 
 
@@ -107,7 +111,7 @@ function getHouseInfo($id){
         }
     }
 
-    function date_range($first, $last, $step = '+1 day', $output_format = 'd-m-y' ) {
+    function date_range($first, $last, $step = '+1 day', $output_format = 'd-m-Y' ) {
 
     $dates = array();
     $current = strtotime($first);
@@ -118,7 +122,6 @@ function getHouseInfo($id){
         $dates[] = date($output_format, $current);
         $current = strtotime($step, $current);
     }
-
     return $dates;
 
 }?>
