@@ -17,7 +17,7 @@ body {
   max-height: 70px;
 }
 
-@media only screen and (min-width: 1400px) {  
+@media only screen and (min-width: 1400px) {
   #search > form > div > input {
     width: 90%;
     min-width: 180px;
@@ -37,7 +37,7 @@ body {
     text-align: center;
   }
 }
-@media only screen and (min-width: 620px) {  
+@media only screen and (min-width: 620px) {
   #topNavBar {
     max-height: 5.5em;
   }
@@ -203,8 +203,6 @@ body {
 #Profile {
   background-image: url("../images/house2.jpg");
   width: 100%;
-  min-height: 800px;
-  height: 100vh;
   left: 0;
   top: 0;
   z-index: -10;
@@ -241,6 +239,7 @@ body {
 	padding: 1em;
 }
 #error {
+  margin-top: 7em;
   column-span: all;
   color: red;
   text-align: center;
