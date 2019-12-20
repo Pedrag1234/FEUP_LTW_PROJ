@@ -382,3 +382,12 @@ body {
 #AddHouseForm textarea {
   width: 200px;
 }
+
+#reservation_display {
+  border: 1em;
+  color: white;
+  background-color: gray;
+  border-radius: 15px;
+  padding: 15px;
+  margin: 3px;
+}

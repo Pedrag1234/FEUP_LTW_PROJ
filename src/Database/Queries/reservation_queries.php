@@ -81,4 +81,12 @@
 		$stmt->execute(array($id_house, $start_date, $end_date));
 	}
 
+	function getReservationofHouse($id_house,$id_user){
+		global $dbh;
+
+		$stmt = $dbh->prepare('SELECT * FROM reservation WHERE id_user = ? AND id_house = ?');
+		$stmt->execute(array($id_user,$id_house));
+		return $stmt->fetchAll();
+	}
+
 ?>
