@@ -10,19 +10,21 @@
 
     if (isset($_SESSION['Username'])) {
         draw_header_profile();
+        $username = $_SESSION['Username'];
     }
     else{
         draw_header_index();
+        $username = "";
     }
 
     //pic_slider($house_id);
     getHouseInfo($house_id);
-    drawReviews($house_id);
+    drawReviews($house_id,$username);
     if (!isset($_SESSION['Username'])) {
         echo '<h3>Login to Write Reviews</h3>';
     }
     else {
-        $username = $_SESSION['Username'];
+       
         $reviews =  getReviewsbyUserandHouse($house_id,$username);
         $reservations = getReservationofHouse($house_id,$username);
         $newDate = strtotime(date("d-m-y"));
